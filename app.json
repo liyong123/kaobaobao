@@ -1,0 +1,54 @@
+{
+  "pages": [
+      
+     
+    "pages/temporary/index",
+    "pages/index/index",
+    "pages/index/newsMore/index",
+    "pages/index/newsMore/newsDetail/index",
+    "pages/index/expert/index",
+    "pages/shop/index",
+    "pages/shop/goodsDetail/index",
+    "pages/shop/confirmOrders/index",
+    "pages/shop/shopCar/index",
+    "pages/user/index",
+    "pages/user/myState/index",
+    "pages/user/myMessage/index",
+    "pages/user/myAddress/index",
+    "pages/user/myAddress/newAddress/index",
+    "pages/user/myOrder/index",
+    "pages/user/sqjxs/index",
+    "pages/user/sqzj/index",
+    "pages/user/xsmx/index",
+    "pages/login/login",
+    "pages/echarts/index",
+    "pages/jiaqun/index",
+    "pages/wenjuan/index",
+    "pages/wenjuanIndex/xinli/index",
+    "pages/wenjuanIndex/xueye/index",
+    "pages/wenjuanIndex/yingyang/index",
+    "pages/wenjuanresult/xltjcs/index",
+    "pages/wenjuanresult/stztcs/index",
+    "pages/wenjuanresult/jzbzcs/index",
+    "pages/wenjuanresult/xxghcs/index",
+    "pages/zjfa/index",
+    "pages/zjfa/zjdetail/index",
+    "pages/zjfa/zjpsj/index",
+    "pages/zjmx/index"
+  
+    
+     
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#f93436",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white",
+    "backgroundTextStyle": "dark"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

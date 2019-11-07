@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的状态",
+  "usingComponents": {
+    "ec-canvas": "../../../ec-canvas/ec-canvas"
+  }
+}

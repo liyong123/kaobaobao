@@ -1,0 +1,67 @@
+<!--收货地址管理pages/user/myAddress/index.wxml-->
+<view class='container'>
+   <!-- 点击“我的-收货地址管理” -->
+   <view wx:if="{{!goods_to_address}}" class='address_all'>
+     <view class='address_one' wx:for="{{addressDatas}}" wx:key="addressDatas">
+         <view class='address_name_grp'>
+            <view class='name_tele_grp'>
+              <view>
+                <text>{{item.personName}}</text>
+                <text>{{item.phone}}</text>
+              </view> 
+              <text wx:if="{{item.isDefault == 1}}">默认</text>
+            </view>
+            <view class='address_in'>
+               <text>{{item.province + item.city + item.distict + item.address}}</text>
+            </view>
+         </view>
+         <view class='address_moren_grp'>
+           <view class='action_grp'>
+               <navigator class='action_btn' url='/pages/user/myAddress/newAddress/index?address_code={{item.id}}&&edit=true'>
+                 <text class='iconfont iconedit-'></text>
+                 <text>编辑</text>
+               </navigator>
+               <view class='action_btn' data-deleteid='{{item.id}}' bindtap='deleteAddress'>
+                 <text class='iconfont icondelete'></text>
+                 <text>删除</text>
+               </view>
+           </view>
+         </view>
+     </view>
+   </view>
+   <!-- 从 购买商品的提交页面 跳转到  收货地址管理 -->
+   <view wx:if="{{goods_to_address}}" class='address_all'>
+     <view class='address_one' wx:for="{{addressDatas}}"  wx:key="addressDatas">
+         <view class='address_name_grp' bindtap='updateAddress' data-addressId="{{item.id}}" >
+            <view class='name_tele_grp'>
+              <view>
+                <text>{{item.personName}}</text>
+                <text>{{item.phone}}</text>
+              </view> 
+              <text wx:if="{{item.isDefault == 1}}">默认</text>
+            </view>
+            <view class='address_in'>
+               <text>{{item.province + item.city + item.distict + item.address}}</text>
+            </view>
+         </view>
+         <view class='address_moren_grp'>
+           <view class='action_grp'>
+               <navigator class='action_btn' url='/pages/user/myAddress/newAddress/index?address_code={{item.id}}&&edit=true&&goods_to_address=1&&orderSeq={{orderSeq}}' >
+                 <text class='iconfont iconedit-'></text>
+                 <text>编辑</text>
+               </navigator>
+               <view class='action_btn' data-deleteid='{{item.id}}' bindtap='deleteAddress'>
+                 <text class='iconfont icondelete'></text>
+                 <text>删除</text>
+               </view>
+           </view>
+         </view>
+     </view>
+   </view>
+   <view wx:if="{{noAddressTip}}" class='nothing_more'>
+      <text>您好没有设置地址，快去设置吧！</text>
+   </view>
+   <navigator  class='add_address' url="{{!goods_to_address?'/pages/user/myAddress/newAddress/index': '/pages/user/myAddress/newAddress/index?goods_to_address=1&&orderSeq='+ orderSeq}}">
+      <text>添加新地址</text>
+   </navigator>
+</view>

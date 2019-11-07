@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "usingComponents": {
+    "tab-bar": "../../component/tabbar/tabbar",
+    "get_user": "../../component/getUser/getUser"
+  }
+}

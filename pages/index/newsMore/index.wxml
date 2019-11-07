@@ -1,0 +1,23 @@
+<!--专家专栏pages/index/newsMore/index.wxml-->
+<view class="container" style='border-top: solid 1rpx #eee'>
+    <!-- 专家专栏 -->
+     <view class='zhuanjia_module_grp'>
+        <view class='zhuanjia_area'>
+            <navigator class='zhuanjia_one' url='/pages/index/newsMore/newsDetail/index?id={{item.id}}'  wx:for="{{expertDatas}}" wx:key="zhuanjia_one">
+               <image src='{{item.headImg}}'></image>
+               <view class='zhuanjia_one_font' style='width:{{zhuajiaMessageWidth}}'>
+                   <view class='zhuanjia_one_title'>{{item.title}}</view>
+                   <view class='zhuanjia_one_abstract'>{{item.description}}</view>
+                   <view class='zhuanjia_one_date_grp'>
+                     <text>{{item.createDate}}</text>
+                     <text>来源：{{item.origin}}</text>
+                   </view>
+               </view>
+            </navigator>
+        </view>
+     </view>
+
+     <view class='nothing_more'>
+       <text wx:if="{{dataIsEnd}}">──────没有更多了─────</text>
+    </view>
+</view>

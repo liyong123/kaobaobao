@@ -1,0 +1,94 @@
+<!--pages/user/index.wxml-->
+<!-- 个人中心（我的）（多种角色身份） -->
+<view class='container'>
+   <!-- 头部信息 -->
+   <view class='header_message_grp'>
+      <view class='header_img_grp'>
+         <view>
+            <image src="{{ headImg }}" />
+         </view>
+         <view class='header_user_ID'>
+           <!-- 判断角色 -->
+           <image src='../../image/header_user_bg.png'></image>
+           <text wx:if="{{userType == 1}}">普通用户</text>
+           <text wx:elif="{{userType == 3}}">专家</text>
+           <text wx:else= "{{userType == 2}}">经销商</text>
+         </view>
+      </view>
+      <!-- 消息 -->
+      <view class='message_tip'>
+         <view>
+            <navigator>
+               <image src='../../image/user_messge_tip.png'></image>
+            </navigator>
+            <text>{{tipNum}}</text>
+         </view>
+      </view>
+      <navigator wx:if="{{applyAgentStatus== -1 || applyAgentStatus== 2}}" url="/pages/user/sqjxs/index" class='jxs_rz'>
+         <text wx:if="{{applyAgentStatus== -1}}">申请经销商认证</text>
+         <text wx:if="{{applyAgentStatus == 2}}">未通过</text>
+      </navigator>
+      <view wx:if="{{applyAgentStatus== 0 || applyAgentStatus== 1}}" class='jxs_rz'>
+         <text wx:if="{{applyAgentStatus == 0}}">审核中</text>
+         <text wx:if="{{applyAgentStatus == 1}}">一级经销商</text>
+      </view>
+   </view>
+   <!-- 其他模块 -->
+   <view class='user_other_content'>
+       <!-- 服务人数、分数、时间 -->
+       <view wx:if="{{userType == 3}}"  class='service_date_grp'>
+          <view class='service_grp'>
+            <text>{{serviceNumber}}</text>
+            <text>服务人数</text>
+          </view>
+          <view class='service_grp'>
+            <text>{{serviceScore}}</text>
+            <text>服务分数</text>
+          </view>
+          <navigator class='date_grp'>
+            <image src='../../image/user_date_grp.png'></image>
+            <text>排时间</text>
+         </navigator>
+       </view>
+       <!-- 我的订单 -->
+       <view class='user_order_grp'>
+          <view class='user_order_title'>
+             <text>我的订单</text>
+             <navigator url='/pages/user/myOrder/index'>查看 ></navigator>
+          </view>
+          <view class='user_order_message'>
+             <navigator wx:for="{{userOrderMes}}" url='{{item.linkUrl}}' wx:key="userOrderMes">
+                <image src='{{item.imgUrl}}'></image>
+                <text>{{item.name}}</text>
+             </navigator>
+          </view>
+       </view>
+       <!-- 我的状态、我的消息、收货地址 -->
+       <view class='user_state_grp'>
+          <view class='user_state_one' wx:for="{{userStateDatas}}" wx:key="userStateDatas">
+             <view>
+               <image src='{{item.imgUrl}}'></image>
+               <text>{{item.name}}</text>
+             </view>
+             <navigator class="iconfont iconnext" url="{{item.linkUrl}}"></navigator>
+          </view>
+       </view>
+       <view style='margin-top:0' class='huise_bg'></view>
+       <!-- 申请专家认证 -->
+       <view class='user_state_grp sq_zhuanjia_rz'>
+          <view class='user_state_one'>
+              <view>
+                <image src='../../image/user_sq_zj_rz.png'></image>
+                <text wx:if="{{ applyExpertStatus == -1 }}">申请专家认证</text>
+                <text wx:if="{{ applyExpertStatus == 0 }}">专家认证审核中</text>
+                <text wx:if="{{ applyExpertStatus == 1 }}">专家认证通过</text>
+                <text wx:if="{{ applyExpertStatus == 2 }}">专家认证未通过</text>  
+              </view>
+              <navigator wx:if="{{ applyExpertStatus == -1 }}"  url='/pages/user/sqzj/index' class="iconfont iconnext"></navigator>
+            </view>
+       </view>
+   </view>
+   <view class='bottom_filler'></view>
+</view>
+<get_user show= "{{showBottomPopup}}" type= "bottom" bind:close="popToggle" ></get_user>
+<tab-bar pagesMenu = '{{pagesMenu}}'></tab-bar> 

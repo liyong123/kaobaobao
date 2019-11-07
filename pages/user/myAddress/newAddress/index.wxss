@@ -1,0 +1,59 @@
+/* pages/user/myAddress/newAddress/index.wxss */
+.person_mes_grp {
+  display: flex;
+  flex-direction: column;
+  border-top: solid 1rpx #eee;
+  padding: 0 30rpx;
+}
+.person_mes_one {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 90rpx;
+  border-bottom: solid 1rpx #eee;
+}
+.person_mes_one label {
+  width: 150rpx;
+  font-size: 32rpx;
+  color: #181818
+}
+.person_mes_one > input[type='text'] {
+  font-size: 30rpx;
+  color: #181818;
+  width: 500rpx;
+  height: 60rpx;
+}
+.person_mes_one picker.picker_grp {
+  font-size: 30rpx;
+  color: #181818;
+  display: flex;
+  width: 500rpx;
+  flex-direction: row;
+  justify-content: space-between
+}
+.person_mes_one2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
+.person_mes_one2 > label  {
+  width: 250rpx;
+  flex: none
+}
+.form_btn_grp {
+  margin-top: 200rpx;
+}
+.form_btn_grp button {
+  display: flex;
+  justify-content: center;
+  margin: 0 30rpx;
+  background-color: #fa364c;
+  font-size: 34rpx;
+  align-items: center;
+  color: #fff;
+  height: 95rpx;
+}
+.wx-switch-input{ width:90rpx !important; height:40rpx !important; }
+.wx-switch-input::before{ width:86rpx !important; height: 38rpx !important; }
+.wx-switch-input::after{ width: 42rpx !important; height: 38rpx !important; }

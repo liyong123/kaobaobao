@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+   <view style="text-align:center">专家主页</view>
+
+</view>
+<tab-bar pagesMenu = '{{pagesMenu}}'></tab-bar> 

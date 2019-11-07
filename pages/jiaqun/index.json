@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "家长群",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "tab-bar": "../../component/tabbar/tabbar"
+  }
+}

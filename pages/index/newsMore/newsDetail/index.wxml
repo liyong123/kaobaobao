@@ -1,0 +1,19 @@
+<!--专家专栏详情页pages/index/newsMore/newsDetail/index.wxml-->
+<import src="../../../../utils/wxParse/wxParse.wxml"/> 
+<view class="container">
+   <view class='news_content_grp'>
+      <view class='header_img'>
+        <image mode="aspectFill" src='{{headImg}}'/>
+      </view>
+      <view class='title_main'><text>{{title}}</text></view>
+      <view class='origin_date_grp'>
+         <text>来源：</text>
+         <text>{{origin}}</text>
+         <text>发表日期：</text>
+         <text>{{createDate}}</text>
+      </view>
+      <view class='content'>
+        <template is="wxParse" data="{{wxParseData:contentStr.nodes}}"/>
+      </view>
+   </view>
+</view>

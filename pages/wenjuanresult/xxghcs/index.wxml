@@ -1,0 +1,86 @@
+<!--学习规划测试结果pages/wenjuanresult/xxghcs/index.wxml-->
+<view class='container'>
+   <view class='header_bg'>
+   </view>
+   <view class='result_grp'>
+      <view class='cs_result'>测试结果</view>
+      <view class='cs_score'>
+         <image mode='widthFix' src='{{ceResultBg}}' />
+         <view class='score_grp'>
+            <text>{{score}}</text>
+            <text>分</text>
+         </view>
+      </view>
+      <view class='ce_result_font'>{{ceResultFont}}</view> 
+      <view class='solve_grp'>
+         <text>自主解决方案</text>
+         <view>{{zzjjfa}}</view>
+      </view>
+   </view>
+  <view class='cp_solve_grp' style='margin-bottom:48rpx'>
+      <view class='solve_title'>
+        <view class='title_bg'></view>
+        <view class='title_main'>
+          <text> </text>
+          <text>学习方法指导</text>
+        </view>
+        <navigator url="{{cp_more}}">
+          <text>更多</text>
+          <text class='iconfont iconnext'></text>
+        </navigator>
+      </view>
+      <view class='zj_main_content'>
+         <navigator class='zj_one' wx:for="{{zjData}}" wx:key="zjData">
+            <view class='header_grp'>
+               <image src='{{item.headerImg}}' />
+            </view>
+            <view class='name_grp'>
+               <text>{{item.name}}</text>
+               <text>{{item.touxian}}</text>
+            </view>
+         </navigator>
+      </view>
+  </view>
+  <view class='other_service_grp'>
+     <view class='other_title'>
+        <text></text>
+        <text>其他服务</text>
+     </view>
+     <view class='other_content'>
+        <view class='other_one' wx:for="{{otherDatas}}" wx:key="otherDatas">
+           <image src='{{item.imgUrl}}' />
+           <view>
+              <text style='font-size:36rpx'>{{item.title}}</text>
+              <text style='font-size:16rpx'>{{item.abstract}}</text>
+           </view>
+        </view>
+     </view>
+     <view class='other_content other_content4'>
+        <view class='other_one' wx:for="{{otherDatas4}}" wx:key="otherDatas4">
+           <image src='{{item.imgUrl}}' />
+           <view>
+              <text style="font-size:{{index+1 == otherDatas4.length ? '42rpx' : '36rpx' }}">{{item.title}}</text>
+              <text style='font-size:16rpx'>{{item.abstract}}</text>
+           </view>
+        </view>
+     </view>
+      <view class='other_content other_content2'>
+        <view class='other_one' wx:for="{{otherDatas2}}" wx:key="otherDatas2">
+           <image src='{{item.imgUrl}}' />
+           <view>
+              <text>{{item.title}}</text>
+              <text>{{item.abstract}}</text>
+           </view>
+        </view>
+     </view>
+     <view class='other_content other_content2'>
+        <view class='other_one' wx:for="{{otherDatas3}}" wx:key="otherDatas3">
+           <image src='{{item.imgUrl}}' />
+           <view>
+              <text>{{item.title}}</text>
+              <text>{{item.abstract}}</text>
+           </view>
+        </view>
+     </view>
+  </view>
+</view>

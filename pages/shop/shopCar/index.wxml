@@ -1,0 +1,46 @@
+<view class='container' >
+    <checkbox-group class="checkbox_grp"  bindchange="checkboxChange"  >
+      <view  class='item_one' wx:for="{{goodsData}}" wx:key="goods_data" >
+        <view class='no_delete_grp'  style="{{item.txtStyle}}"  data-index="{{index}}"   bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
+          <view class='checkbox_in'>
+            <checkbox value="{{item.id}}" checked='{{item.checked}}' />
+          </view>
+          <view class='item_main'>
+            <image src='{{item.thumbnailImg}}' data-imageGoodsId="{{item.goodsId}}"  bindtap='backGoodsDetail'/>
+            <view class='item_mes_grp'>
+                <view class='description'>{{item.description}}</view>
+                <view class='guige_grp'>
+                    <text>{{item.specRemark}}</text>
+                </view>
+                <view class='price_number'>
+                  <view class='price'>
+                      <text>¥</text>
+                      <text>{{item.price}}</text>
+                  </view>
+                  <view class="buy_number">
+                      <view class="selectNumber">
+                        <button catchtap="onDecGoodsNumber" data-goodsId = "{{item.id}}" data-number = "{{item.number}}" class="default {{ item.number > 1 ? '' : ' default-active' }}" type="default">-</button>
+                        <input bindinput="onInputGoodsNum" data-goodsId = "{{item.id}}" data-number = "{{item.number}}" type="number" value="{{ item.number }}"></input>
+                        <button catchtap="onIncGoodsNumber" data-goodsId = "{{item.id}}" data-number = "{{item.number}}"  class="default" type="default">+</button>
+                      </view>
+                  </view>
+                </view> 
+            </view> 
+          </view>
+        </view>  
+        <view class='delete_grp'>
+            <view class="del" data-goodsId="{{item.id}}" data-index="{{index}}" bindtap="delAddress">删除</view>
+        </view>
+      </view>
+    </checkbox-group>
+    <view class='nothing_more' wx:if="{{goodsData<1}}"><text>您的购物车空空...</text></view>
+    <view class='jiesuan_grp'>
+       <view>
+         <text>合计：</text>
+         <text>¥{{totalPrice}}</text>
+       </view>
+       <view  class='go_buy_order'  bindtap='goBuyOrder'>
+          <text>去结算({{totalNumber}})</text>
+       </view>
+    </view>
+</view>

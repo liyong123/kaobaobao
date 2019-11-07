@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "商城中心",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "tab_qie": "../../component/tabqie/tabqie",
+    "tab-bar": "../../component/tabbar/tabbar"
+  }
+}

@@ -1,0 +1,50 @@
+<!--问卷测试pages/wenjuan/index.wxml-->
+<view class='container'>
+  <view wx:if = "{{isFinished}}" class='nothing_more'>您已完成此类测试！</view>
+  <view wx:if = "{{!isFinished}}">
+    <view class='tip_line_all'>
+      <view class='tip_grp'>
+          <text class='iconfont iconbell'></text>
+          <text>根据您最近一周的实际感觉，选择一个最符合您的选项！</text>
+      </view>
+      <view class='jindu_line_grp'>
+          <view class='shiti_type_grp'>
+            <text>{{testDatas.items[shiti_id].selectType === 0? "单选题": "多选题"}}</text>
+            <view>
+                <text>{{shiti_id+1}}</text>
+                <text>/{{testDatas.items.length}}</text>
+            </view>
+          </view>
+          <view class='line_grp'>
+            <text style='width:{{line_percent}}%'></text>
+          </view>
+      </view>
+    </view>
+    <form class='shiti_content_grp'>
+        <view class='shiti_title'><text>{{testDatas.items[shiti_id].title}}</text></view>
+        <view class='shiti_choose'>
+          <checkbox-group wx:if="{{testDatas.items[shiti_id].selectType === 1}}" bindchange="checkboxChange" >
+            <view class='shiti_choose_one' wx:for="{{testDatas.items[shiti_id].content}}" wx:key="shiti_content">
+              <text>{{item.name}}</text>
+              <checkbox value="{{item.id}}" checked='{{item.checked}}'  />
+            </view>
+          </checkbox-group>
+          <radio-group wx:else bindchange="radioChange">
+              <view class='shiti_choose_one' wx:for="{{testDatas.items[shiti_id].content}}" wx:key="shiti_content">
+                <text>{{item.name}}</text>
+                <radio  value="{{item.id}}"  checked='{{item.checked}}'></radio>
+              </view>
+          </radio-group>
+        </view>
+        <view class='button_grp' wx:if = "{{ (shiti_id+1) != testDatas.items.length }}">
+            <button bindtap="lastQuestion" >上一题</button>
+            <button bindtap="nextQuestion" >下一题</button>
+        </view>
+
+        <view class='button_grp2' wx:if = "{{ (shiti_id+1) == testDatas.items.length }}">
+            <button  bindtap="nextQuestion" ><text>提交测试</text></button>
+          
+        </view>
+    </form>  
+  </view>
+</view>

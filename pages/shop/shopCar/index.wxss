@@ -1,0 +1,219 @@
+page {
+  background: #f7f7f7
+}
+.checkbox_grp {
+  padding: 30rpx 0rpx;
+}
+.item_one {
+  display: flex;
+  margin-bottom: 20rpx;
+  flex-direction: row;
+  align-items: center;
+  /* padding: 30rpx 20rpx; */
+  background: #fff;
+  position: relative;
+  height: 250rpx;
+  border-radius: 14rpx;
+  justify-content: flex-end
+}
+.checkbox_in {
+  width: 60rpx;
+}
+.item_main {
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+.item_main image {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 12rpx;
+  border: solid 1rpx #f7f7f7;
+  margin-right: 20rpx
+}
+.item_mes_grp {
+  display: flex;
+  flex-direction: column;
+  width: 400rpx;
+  justify-content: space-between
+}
+.item_mes_grp .description {
+  color: #181818;
+  font-size: 26rpx;
+  height: 70rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.guige_grp {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+  font-size: 22rpx;
+  color: #999
+}
+.guige_grp text{
+ padding: 6rpx 10rpx;
+ background: #efefef;
+ border-radius: 4rpx;
+}
+.price_number {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.price {
+  display: flex;
+  align-items: flex-end;
+  color: #fb364b;
+}
+.price text:first-child{
+  font-size: 26rpx;
+  padding-bottom: 6rpx;
+  margin-right: 4rpx
+}
+.price text:last-child{
+  font-size: 38rpx;
+  color: #fb364b;
+}
+
+/* 购买数量 */
+.buy_number {
+  display: flex;
+  justify-content: space-between;
+}
+.buy_number .buyNumber {
+  font-size: 28rpx;
+  color: #181818;
+  background: #fff;
+}
+.selectNumber {
+  height: 28px;
+  flex-direction: row;
+  border: 2rpx solid #eee;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+
+.selectNumber .default {
+  width: 28px;
+  height: 28px;
+  float: left;
+  line-height: 26px;
+  padding: 0;
+  background: #fff;
+  color: #444;
+  font-size: 36rpx;
+  border: none;
+}
+
+.selectNumber .default-active {
+  background: #f7f7f7;
+  color: #ddd;
+}
+
+.selectNumber button:after {
+  content: none;
+  border: none;
+}
+
+.selectNumber input {
+  float: left;
+  width: 28px;
+  height: 28px;
+  line-height: 26px;
+  border-right: 2rpx solid #eee;
+  border-left: 2rpx solid #eee;
+  text-align: center;
+  font-size: 24rpx;
+  color: #444;
+}
+/* 未选中的 背景样式 */
+checkbox .wx-checkbox-input{
+  border-radius: 30rpx;/* 圆角 */
+  width: 30rpx; /* 背景的宽 */
+  height: 30rpx; /* 背景的高 */
+  border: 2rpx solid #999;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  border: 2rpx solid #f98293;
+  background: #fff;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  width: 24rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 24rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 24rpx;
+  text-align: center;
+  font-size:28rpx; /* 对勾大小 30rpx */
+  color:#fb364b; /* 对勾颜色 白色 */
+  background: transparent;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}
+
+.jiesuan_grp {
+  height: 100rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  left: 0;
+  width: 100%;
+}
+.jiesuan_grp > view:first-child  {
+  margin-left: 30rpx;
+}
+.jiesuan_grp > view:first-child >text:first-child {
+  font-size: 32rpx;
+  color: #666;
+}
+
+.jiesuan_grp > view:first-child >text:last-child {
+  font-size: 32rpx;
+  color: #000;
+}
+.jiesuan_grp >.go_buy_order {
+  margin-right: 30rpx;
+  padding: 0 40rpx;
+  height: 68rpx;
+  background: #fb364b;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  border-radius: 34rpx;
+}
+
+.no_delete_grp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  left: 0rpx;
+  background: #fff;
+  top: 0rpx;
+  bottom: 0rpx;
+  right: 0;
+  z-index: 99;
+  justify-content: center;
+}
+.delete_grp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 28rpx;
+  z-index: 98;
+  height: 100%;
+  width: 60px;
+  background: #fb364b;
+  
+}

@@ -1,0 +1,158 @@
+<!--pages/echarts/index.wxml-->
+<view class='topBkg'>
+    <view class='tabContent'>
+      <view class='yearGrp'>
+        <view bindtap='chooseYearEvent'>
+          <text class='iconfont iconarrow- showYearText' wx:if="{{!yearBoardShow}}"></text>
+          <text class='iconfont iconarrow-1 showYearText showYearText2'  wx:if="{{yearBoardShow}}" ></text>
+          <text>{{currentYear}}</text>
+        </view>
+        <view class='yearGrpBoard' wx:if="{{yearBoardShow}}">
+            <view class='yearGrpTitle'>
+               <text style='margin-right:10rpx' class='iconfont iconroll'></text>
+               <text>年份切换</text>
+            </view>
+            <view class='yearGrpSelected'>
+               <view wx:for="{{yearGrps}}" wx:key="yearGrps" class='{{currentYear == item.year ? "selectedYear" :""}}'  bindtap='clickYearEvent' data-yearIndex="{{item.year}}">
+                 {{item.year}}
+               </view>
+            </view>
+        </view>
+      </view>
+      <view wx:for="{{cityTabDatas}}" class='{{currentTab == index ? "choosedTab" :"choosedTab2"}}' data-cityTab="{{index}}" wx:key="tabUniqueCity" bindtap='tabChange'>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+</view>
+
+<view class='mainContent' wx:if="{{currentTab==0 || currentTab==1}}" style='height:{{mainContentHight}}' bindtouchstart='{{boardShow ? "hideMapBoardModal":"hideMapBoardModal2"}}'>
+    <view class='totalDataContent'>
+        <view class='totalArea2' wx:if="{{currentTab==0}}">
+          <view class='totalNum2'>
+            <text>{{currentYear}}</text>
+            <view><view></view><text>已成交金额</text></view>
+          </view>
+          <view class='totalImg'>
+            <image src='http://qdrc.jfh.com/qingdao/webchat/img/undraw_1.png' />
+          </view>
+      </view>
+      <view class='stateGrp2' wx:if="{{currentTab==0}}">
+          <view>
+            <text>{{alreadyDeal}}</text>
+            <text>元</text>
+          </view>
+      </view>
+      <view class='totalArea' wx:if="{{currentTab==1}}">
+          <view class='totalImg' style='margin-top:16rpx'>
+            <image src='http://qdrc.jfh.com/qingdao/webchat/img/undraw_2.png'/>
+          </view>
+          <view class='totalNum'>
+            <text>总建设项目数(个)</text>
+            <text>{{totalBuild}}</text>
+          </view>
+      </view>
+      <view class='stateGrp' wx:if="{{currentTab==1}}">
+          <view>
+            <text>建设中(个)</text>
+            <text>{{buildIn}}</text>
+          </view>
+          <view>
+            <text>已验收(个)</text>
+            <text>{{alreadyPass}}</text>
+          </view>
+      </view>
+    </view>
+    <view class='mapContent' style='top:{{mapContentTop}}'>
+      <view class="mapContainer">
+          <ec-canvas id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}"></ec-canvas>
+      </view>
+      <view class='eachAreaData'>
+          <view class='areaTitle'>
+            <text>{{currentTab == 0 ? "南京市各区域采购数据" : "南京市各区域建设数据"}} </text>
+            <text>NANJING MAP</text>
+          </view>
+          <view class='eachAreaAll'>
+            <view wx:for="{{eachAreaDatas}}" class='eachArea {{ currentArea == index ? "choosedArea" :""}}' data-areaTab="{{index}}" wx:key="areaTabUnique" bindtap='areaTabChange'>
+              <text>{{item.name}}</text>
+            </view>
+          </view>
+      </view>
+    </view>
+  </view>
+
+
+  <cover-view class='dataBoard' wx:if="{{boardShow}}" style='left:{{boardPositionLeft}};top:{{boardPositionTop}}'>
+    <cover-view class='arrowGrp'>
+        <!-- <cover-view class='boardArrow' wx:if="{{boardArrowShow}}"></cover-view>
+        <cover-view class='boardArrowBottom' wx:if="{{boardArrowBottomShow}}"></cover-view> -->
+        <cover-image class='boardArrow' src="../../image/boardArrow.png" wx:if="{{boardArrowShow}}"></cover-image>
+        <cover-image class='boardArrowBottom' src="../../image/boardArrow.png" wx:if="{{boardArrowBottomShow}}"></cover-image>
+    </cover-view>
+    <cover-view class='boardContent'>
+        <cover-view class='boardMainContent'>
+          <cover-view class='boardTitle'>
+            {{boardAreaName}}
+          </cover-view>
+          <cover-view class='numGrp'> 
+            {{purchaseNum}}
+          </cover-view>
+          <cover-view class="dataName">{{currentTab == 0 ? "采购单位数量" : "总建设项目数"}}</cover-view>
+          <cover-view class="numGrp">
+            <cover-view wx:if="{{currentTab == 0 ? true : false}}">{{dealMoney}}</cover-view>
+            <cover-view style='margin:0 6rpx;color:#666' wx:if="{{currentTab == 0 ? true : false}}">|</cover-view>
+            <cover-view>{{proportion}}</cover-view>
+          </cover-view>
+          <cover-view class="dataName">{{currentTab == 0 ? "已成交金额 | 全市占比" : "总建设项目数全市占比"}}</cover-view>
+          <cover-view class='closeBtn' bindtap='coloseBoard'>
+            <cover-view>查看详情</cover-view>  
+          </cover-view>
+        </cover-view>
+    </cover-view>
+  </cover-view> 
+
+  <view wx:if='{{currentTab==2}}' style='margin-bottom:100rpx;'>
+    <view class='overview_mainContent'>
+      <view class='overview_totalDataContent'>
+        <view class='overview_totalArea'>
+            <view class='overview_totalImg'>
+              <image src='../../image/overview_top.jpg' />
+            </view>
+            <view class='overview_totalNum'>
+              <text>供应商总数(个)</text>
+              <text>{{totalCount.allCount}}</text>
+            </view>
+        </view>
+        <view class='overview_stateGrp'>
+            <view>
+              <view>平台认证数<text>(个)</text></view>
+              <view>{{totalCount.auditCount}}</view>
+            </view>
+            <view>
+              <view>政采供应商数<text>(个)</text></view>
+              <view>{{totalCount.govCount}}</view>
+            </view>
+        </view>
+      </view>
+    </view>
+    <view class='overview_data-board'>
+      <view class='overview_datapart-wrap'>
+        <view class='overview_datapart-title'>
+          <view></view>
+          <text>供应商年营业额分布<text style='font-size:18rpx;color:#a7a7a7;'>(万)</text></text>
+        </view>
+        <view style=' height: 320rpx;' >
+          <ec-canvas id="mychart-volume-bar" canvas-id="mychart-bar" ec="{{ ecBar }}"></ec-canvas>
+        </view>
+      </view>      
+      <image class='overview_dash-line'></image>
+      <view class='overview_datapart-wrap'>
+        <view class='overview_datapart-title'>
+          <view></view>
+          <text>供应商主要服务的行业分布Top5</text>
+        </view>
+        <view  style='height: 400rpx;' >
+            <ec-canvas id="mychart-license-pie" canvas-id="mychart-pie" ec="{{ ecPie }}"></ec-canvas>
+        </view> 
+      </view>
+    </view>
+  </view>

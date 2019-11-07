@@ -1,0 +1,13 @@
+<!-- tab切组件 -->
+<view class='tabContent'>
+  <view wx:for="{{tabData}}" class='{{currentTab == index ? "choosedTab" :""}}' data-tab="{{index}}" wx:key="tabUnique" bindtap='tabChange'>
+    <view class='tabTitleMain'>
+      <image wx:if="{{ currentTab === index && iconImageShow.show }}" src="{{iconImageShow.url}}"></image>
+      <text>{{item.title}}</text>
+    </view>
+    
+    <!-- <text>{{"（"+  item.num + "）"}}</text> -->
+    <text hidden='{{currentTab != index}}' class='bottomLine'></text>
+  </view>
+</view>
+

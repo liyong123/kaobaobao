@@ -1,0 +1,53 @@
+<!--申请专家pages/user/sqzj/index.wxml-->
+<view class='container' style='position: relative'>
+   <view class='sq_content'>
+      <view class='sq_title'>请填写专家认证资料</view>
+      <form class='form_content' bindsubmit='formSubmit'>
+        <view class='form_item_grp'>
+          <input type='text' name="userName" placeholder='您的真实姓名' placeholder-style='color: #999' />
+          <view class='upload_zs_grp'>
+            <text>请上传已获得的证书</text>
+            <view class='upload_img_grp'>
+              <view bindtap="uploadPic" data-index="1">
+                 <text wx:if= "zszm_add_show"  class='iconfont iconadd'></text>
+                 <image  src='{{zszm}}' />
+              </view>
+              <view bindtap="uploadPic" data-index="2">
+                 <text wx:if= "zsfm_add_show" class='iconfont iconadd'></text>
+                 <image  src='{{zsfm}}' />
+              </view>
+            </view>
+          </view>
+          <view class='upload_js_pic_grp'>
+             <view class='jl_content'>
+                <text>请上传个人简历</text>
+                <view bindtap="uploadPic" data-index="3" >
+                    <text wx:if= "grjl_add_show" class='iconfont iconadd'></text>
+                    <image  src='{{grjl}}' />
+                </view>
+             </view>
+             <view class='jl_content'>
+                <text>请上传近期证件照</text>
+                <view bindtap="uploadPic" data-index="4" >
+                    <text wx:if= "jqzjz_add_show"  class='iconfont iconadd'></text>
+                    <image  src='{{jqzjz}}' />
+                </view>
+             </view>
+          </view>
+        </view>
+
+        <view class='btn_grp'>
+          <button formType="submit">提交资料 等待审核</button>
+        </view>
+         <view class='sq_sm'>
+            <text>提交即表明您已同意</text>
+            <navigator>《考保宝经销商服务协议》</navigator>
+          </view>
+      </form>
+   </view>
+   <view>
+        
+     
+   </view> 
+</view>
+

@@ -1,0 +1,50 @@
+/* pages/index/newsMore/index.wxss */
+.zhuanjia_one {
+  padding: 30rpx 30rpx 40rpx 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: solid 2rpx #eee
+}
+.zhuanjia_one image {
+   width: 160rpx;
+   height: 160rpx;
+   background: #eee;
+   margin-right: 22rpx
+}
+.zhuanjia_one_font {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start
+}
+
+.zhuanjia_one_title {
+  font-size: 26rpx; 
+  color: #000;
+  margin-bottom: 15rpx
+}
+.zhuanjia_one_abstract {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 14rpx;
+  letter-spacing: 1rpx
+}
+.zhuanjia_one_date_grp {
+  font-size: 22rpx;
+  color: #bbb;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.zhuanjia_one_date_grp text:first-child {
+  flex: none;
+  width: 150rpx;
+}
+.zhuanjia_one_date_grp text:last-child {
+  flex: none;
+  width: 200rpx;
+  text-align: right;
+  padding-right: 30rpx
+}

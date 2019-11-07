@@ -1,0 +1,24 @@
+<view class="shortcut" style="right: {{ right }}; bottom: {{ bottom }};">
+
+  <!-- 首页 -->
+  <form bindsubmit="_onTargetPage" report-submit="true">
+    <button formType="submit" data-index="0" class="nav-item btn-normal {{ isShow ? 'show_40' : (transparent ? '' : 'hide_40') }}">
+      <text class="iconfont iconhome"></text>
+    </button>
+  </form>
+
+  <!-- 购物车 -->
+  <form bindsubmit="_onTargetPage" report-submit="true">
+    <button formType="submit" data-index="1" class="nav-item btn-normal {{ isShow ? 'show_20' : (transparent ? '' : 'hide_20') }}">
+      <text class="iconfont iconshopping_gwc"></text>
+    </button>
+  </form>
+
+  <!-- 显示隐藏开关 -->
+  <form bindsubmit="_onToggleShow" report-submit="true">
+    <button formType="submit" class="nav-item nav-item__switch btn-normal {{ isShow ? 'shortcut_click_show' : '' }}">
+      <text class='iconfont icondaohang'></text>
+    </button>
+  </form>
+
+</view>

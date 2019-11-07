@@ -1,0 +1,37 @@
+<!--商城首页pages/shop/index.wxml-->
+<view class='container'>
+    <!-- <view class='tab_grp'>
+        <view class='tab_grp_in'>
+          <tab_qie tabData="{{tabData}}" bind:myEvent= "onMyEvent"></tab_qie>
+        </view>
+    </view> -->
+
+    <view class='scroll_all'>
+       <scroll-view scroll-x="{{true}}" class="scroll_view_all" scroll-with-animation="{{true}}">
+            <view class="tab_item {{ currentTab == index ? 'choosedTab' :''  }}"  wx:for="{{ scrollData }}" data-dictType="{{item.dictType}}" data-tab="{{index}}" wx:key="scrollList" bindtap='tabChange'>
+                <view>
+                  <text>{{item.dictValue}}</text>
+                  <text hidden='{{ currentTab != index}}' class='bottomLine'></text>
+                </view>  
+            </view>
+        </scroll-view>
+   </view>
+    <view class='shop_goods_grp'>
+        <navigator url="{{'/pages/shop/goodsDetail/index?id=' + item.id}}" class='shop_goods_one' wx:for="{{goodsData}}" wx:key="goodsData">
+           <image src='{{item.webImg}}'></image>
+           <view class='goods_abstract'>
+             <text>{{item.description}}</text>
+           </view>
+           <view class='goods_value_grp'>
+               <text>¥{{item.webRealPrice}}</text>
+               <view><text>去购买</text></view>
+           </view>
+        </navigator>
+    </view>
+    <view class='nothing_more' style='margin-top: 30rpx;'>
+       <text wx:if="{{dataIsEnd}}">──────暂无订单─────</text>
+    </view>
+</view>
+
+<tab-bar pagesMenu = '{{pagesMenu}}'></tab-bar> 
+

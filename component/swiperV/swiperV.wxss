@@ -1,0 +1,69 @@
+/* 最新标讯 */
+
+.burberry-glasses {
+  width: 100%;
+  height: 80rpx;
+  margin: 15rpx 25rpx;
+}
+
+/* .burberry-glasses-image {
+  width: 107rpx;
+  height: 27rpx;
+  margin-top: 35rpx;
+} */
+
+.burberry-black, .burberry-red {
+  float: left;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-top: 22rpx;
+}
+
+.burberry-black {
+  color: #333;
+}
+
+.burberry-red {
+  color: #e18273;
+}
+
+.burberry-glasses-content {
+  float: right;
+  width: calc(100% - 125rpx);
+  height: 73rpx;
+  padding-top: 13rpx;
+  /* border-left: 1rpx solid #dedede; */
+}
+
+.burberry-glasses-newest {
+  float: left;
+  border: 1rpx solid #597ff3;
+  color: #597ff3;
+  padding: 5rpx;
+  border-radius: 5rpx;
+  font-size: 24rpx;
+  margin: 10rpx 10rpx 0 10rpx;
+  display: block;
+}
+
+.burberry-glasses-name {
+  float: left;
+  max-width: 350rpx;
+  font-size: 26rpx;
+  color: #4a4a4a;
+  margin: 12rpx 10rpx 0;
+  margin-right: 10rpx;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.burberry-glasses-status {
+  display: block;
+  float: right;
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #e18273;
+  margin: 12rpx 50rpx 0 0;
+}

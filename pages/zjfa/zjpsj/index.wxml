@@ -1,0 +1,27 @@
+<!--专家排时间pages/zjfa/zjpsj/index.wxml-->
+<view class='container'>
+   <view class='tip'><text>根据个人时间安排，如需调整请提前一天</text></view>
+   <view class='choose_time'>
+      <view class='time_content'>
+        <view class='time_item' wx:for="{{timeAll}}" wx:for-index= "index" data-index= "index"  wx:key="timeAll">
+            <view class="week_date_all  {{choosedDay == index? 'choosed': ''}}">
+              <text>{{ item.weekDay }}</text>
+              <text>{{ item.date }}</text>
+            </view>
+            <view class='hour_all'>
+              <view  data-index2= "item2Index" wx:for ="{{item.hourAll}}" wx:for-item = "item2" wx:for-index="item2Index" wx:key="hourAll">
+                <text>{{ item2.startTime }}</text>
+                <text></text>
+                <text>{{ item2.endTime }}</text>
+              </view>
+            </view>
+        </view>
+      </view>
+  </view>
+
+
+  <view class='modal_btn_grp'>
+      <button><text>重置</text></button>
+      <button><text>确定</text></button>
+  </view>
+</view>

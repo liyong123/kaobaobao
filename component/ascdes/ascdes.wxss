@@ -1,0 +1,41 @@
+.filter-list-header {
+  display: flex;
+  justify-content: space-between;
+  height: 86rpx;
+  border-bottom: 1rpx solid #E4E3E3;
+  align-items: center;
+  background-color: #f1f1f2
+}
+
+.filter-list-header .list-header-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+}
+
+.filter-list-header .list-header-item text {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #9B9B9B;
+  letter-spacing: 0;
+}
+
+.filter-list-header .list-header-item .choosed {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #597FF3;
+  letter-spacing: 0;
+}
+
+.filter-list-header .list-header-item image {
+  width: 28rpx;
+  height: 32rpx;
+  margin-left: 10rpx;
+}
+
+.filter-list-header .list-header-item .filter-icon {
+  width: 14rpx;
+  height: 18rpx;
+  margin-left: 10rpx;
+}

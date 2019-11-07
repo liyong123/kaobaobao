@@ -1,0 +1,10 @@
+<!--我的状态 pages/user/myState/index.wxml-->
+<view class='echarts_grp'>
+  <view class='echarts_title'>单位：分</view>
+  <view style='padding:30rpx 50rpx 10rpx; height: 700rpx;' >
+    <ec-canvas id="mychart-volume-bar" canvas-id="mychart-bar" ec="{{ ecBar }}"></ec-canvas>
+  </view>
+  <view class='again_update'>
+    <text bindtap='updateBar'>如有疑问，可重新刷新测试</text>
+  </view>
+</view>

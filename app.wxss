@@ -1,0 +1,124 @@
+/* common.wxss */
+@import "/utils/common.wxss";
+
+page {
+  background: #fff;
+}
+.container {
+  margin-bottom: 100rpx
+}
+/* 灰色长条 */
+.huise_bg{
+  margin-top: 20rpx;
+  height: 20rpx;
+  background-color:#efefef;
+}
+/* 没有更多数据 */
+.nothing_more {
+  display: flex;
+  color: #ccc;
+  font-size: 28rpx;
+  height: 60rpx;
+  padding-bottom: 30rpx ;
+  justify-content: center;
+  align-items: center
+}
+/* 查看更多 */
+.toMore {
+  font-size: 26rpx;
+  color: #c1c1c1;
+  text-align: center;
+  margin: 20rpx 0
+}
+.container .navigator-hover {
+  background-color: transparent;
+}
+.bottom_filler {
+  height: 120rpx
+}
+/* 返回顶部 */
+.back_top {
+  position: fixed;
+  bottom: 150rpx;
+  z-index: 10;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 50%;
+  border: 1rpx solid #eee;
+}
+
+.back_top .icontop {
+  color: #666;
+  display: block;
+  text-align: center;
+  line-height: 66rpx;
+  font-size: 42rpx;
+}
+/* 字体图标 */
+@font-face {
+  font-family: 'iconfont';  /* project id 1424688 */
+  src: url('//at.alicdn.com/t/font_1424688_qkrdktrgoy.eot');
+  src: url('//at.alicdn.com/t/font_1424688_qkrdktrgoy.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1424688_qkrdktrgoy.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1424688_qkrdktrgoy.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1424688_qkrdktrgoy.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1424688_qkrdktrgoy.svg#iconfont') format('svg');
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.iconnext:before {
+    content: "\e642";
+}
+.iconclose:before {
+    content: "\e644";
+}
+.iconshare:before {
+    content: "\e645";
+}
+.icontop:before {
+    content: "\e646";
+}
+.iconadress:before {
+    content: "\e64a";
+}
+.iconedit-:before {
+    content: "\e64c";
+}
+.icondelete:before {
+    content: "\e64b";
+}
+.iconbell:before {
+    content: "\e64d";
+}
+.iconadd:before {
+    content: "\e64e";
+}
+.icondown:before {
+    content: "\e64f";
+}
+.iconup:before {
+    content: "\e650";
+}
+.iconupdate:before {
+    content: "\e652";
+}
+.iconmoneynew:before {
+    content: "\e653";
+}
+.icondate:before {
+    content: "\e654";
+}
+.iconmoney2:before {
+    content: "\e655";
+}
+.iconmoney3:before {
+    content: "\e656";
+}

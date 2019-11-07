@@ -1,0 +1,111 @@
+/* pages/user/sqjxs/index.wxss */
+.sq_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30rpx 50rpx;
+  box-shadow: #fdccd1 0rpx 0rpx 20rpx 2rpx;
+  border-radius: 12rpx;
+}
+.sq_title {
+  color: #000;
+  font-size: 38rpx;
+  margin: 60rpx 0
+}
+.form_content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 60rpx;
+}
+.form_content .form_item_grp {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30rpx
+}
+.form_content .form_item_grp input{
+  border-bottom: solid 1rpx #eee;
+  height: 90rpx;
+  width: 100%;
+  padding: 0 10rpx;
+  font-size: 28rpx;
+  color: #181818
+}
+.btn_grp {
+  margin: 110rpx 50rpx 30rpx 50rpx;
+}
+.btn_grp button {
+  background: #f9354b;
+  font-size: 34rpx;
+  color: #fff;
+}
+.sq_sm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 22rpx;
+  margin-bottom: 160rpx
+}
+.sq_sm text{
+  color: #bbb
+}
+.sq_sm  navigator {
+  color: #28bff1
+}
+.sq_xieyi {
+  position: fixed;
+  top: 0 ;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 99
+}
+.mask {
+  background: #000;
+  opacity: 0.6;
+  width: 100%;
+  height: 100%
+}
+.xieyi_content {
+  background: #fff;
+  position: absolute;
+  top: 20rpx;
+  bottom: 80rpx;
+  left: 66rpx;
+  right: 66rpx;
+  padding: 70rpx 0 0;
+}
+.content_all {
+  overflow-y: auto;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30rpx;
+}
+.content_all > text {
+  color: #333;
+  font-size: 32rpx;
+  margin-bottom: 40rpx;
+
+}
+.content_all > view {
+  font-size: 24rpx;
+  color: #666;
+  width: 100%;
+}
+.ty_xieyi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  box-shadow: #fdccd1 0rpx -2rpx 10rpx 0rpx;
+}
+.ty_xieyi button {
+  width: 240rpx;
+  height: 70rpx;
+  color: #fff;
+  background: #f9354b;
+  font-size: 28rpx;
+
+}

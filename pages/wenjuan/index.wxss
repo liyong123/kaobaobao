@@ -1,0 +1,177 @@
+/* pages/wenjuan/index.wxss */
+page {
+  background: #f5f5f5
+}
+.tip_line_all {
+  background: #fff;
+  padding-bottom: 20rpx;
+}
+.tip_grp {
+  display: flex;
+  border-top: solid 1rpx #eee;
+  padding: 25rpx 30rpx;
+  justify-content: center
+  
+}
+.tip_grp text:first-child {
+  margin-right: 10rpx;
+  color: #fa364b;
+  font-size: 32rpx;
+}
+.tip_grp text:last-child {
+  font-size: 24rpx;
+  color: #aaa;
+}
+.jindu_line_grp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.shiti_type_grp {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   padding-right: 30rpx;
+   margin-bottom: 8rpx;
+}
+.shiti_type_grp > text {
+   color: #fa364b;
+   font-size: 22rpx;
+   margin-right: 20rpx;
+   
+}
+.shiti_type_grp > view {
+  display: flex;
+  flex-direction: row;
+  font-size: 22rpx;
+  color: #aaa
+}
+.shiti_type_grp > view > text:first-child {
+  color: #fa364b
+}
+.line_grp {
+  position: relative;
+  height: 10rpx;
+  background: #f9f9f9;
+  width: 100%;
+}
+.line_grp text {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  height: 10rpx;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  background: #f9364b
+}
+.shiti_content_grp {
+  margin: 20rpx 30rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.shiti_title {
+  padding: 40rpx 30rpx;
+  color: #fa364b;
+  font-weight: 500;
+  font-size: 38rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.shiti_choose {
+  padding: 30rpx 0;
+  margin: 0 24rpx 150rpx;
+  border-top: solid 1rpx #ccc
+}
+.shiti_choose_one {
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 40rpx;
+  margin-bottom: 40rpx;
+  color: #000;
+  font-size: 32rpx;
+}
+
+/* 未选中的 背景样式 */
+checkbox .wx-checkbox-input{
+  border-radius: 0;/* 圆角 */
+  width: 30rpx; /* 背景的宽 */
+  height: 30rpx; /* 背景的高 */
+  border: 2rpx solid #f98293;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  border: 2rpx solid #f98293;
+  background: #fff;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  width: 24rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 24rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 24rpx;
+  text-align: center;
+  font-size:28rpx; /* 对勾大小 30rpx */
+  color:#fb364b; /* 对勾颜色 白色 */
+  background: transparent;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}
+/* 未选中的 背景样式 */
+radio .wx-radio-input{
+  border-radius: 0;/* 圆角 */
+  width: 30rpx;
+  height: 30rpx;
+   border: 2rpx solid #f98293;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked{
+  border: 2rpx solid #f98293;
+  background: #fff;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  width: 24rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 24rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 24rpx;
+  text-align: center;
+  font-size:28rpx; /* 对勾大小 30rpx */
+  color:#fb364b; /* 对勾颜色 白色 */
+  background: transparent;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}
+.button_grp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: #fdccd1 0rpx -6rpx 20rpx 2rpx;
+  height: 120rpx;
+  align-items: center;
+}
+.button_grp button{
+  width: 170rpx;
+  color: #666;
+  font-size: 30rpx;
+  background-color: transparent;
+  margin: 0;
+}
+.button_grp button:last-child{
+  color: #fb364b
+}
+.button_grp2 button{
+  background: #f9364b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin: 0 20rpx 20rpx;
+  height: 100rpx;
+  border-radius: 0
+}

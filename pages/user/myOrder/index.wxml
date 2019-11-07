@@ -1,0 +1,90 @@
+<!--我的订单pages/user/myOrder/index.wxml-->
+<view class='container'>
+    <view class='order_tab_grp'>
+       <tab_qie wx:if="{{orderStatusAll == -1}}" tabData="{{tabData}}" bind:myEvent= "onMyEvent"></tab_qie>
+       <view wx:if="{{orderStatusAll == 0}}" class='one_order_status'>
+          <text>待支付</text>
+       </view>
+       <view wx:if="{{orderStatusAll == 1}}" class='one_order_status'>
+          <text>待发货</text>
+       </view>
+       <view wx:if="{{orderStatusAll == 2}}" class='one_order_status'>
+          <text>待收货</text>
+       </view>
+    </view>
+    <view class='order_content_grp' wx:for="{{orderDatas}}" wx:key="{{order_datas}}">
+       <view wx:if = "{{item.orderType == 1}}" class='order_one_grp'>
+           <view class='order_type'>
+              <text></text>
+              <text>{{item.orderTypeName}}</text>
+           </view>
+           <view class='id_state_grp'>
+              <text><text>订单编号：</text><text>{{item.orderSeq}}</text></text> 
+              <text>{{item.statusName }}</text>
+           </view>
+           <view class='goods_mes_grp'>
+              <view class='img_des_grp'>
+                <image src='{{item.thumbnailImg}}' />
+                <text>{{item.description}}</text>
+              </view>
+              <view class='value_grp'>
+                 <text>¥{{item.singlePrice}}</text>
+                 <text><text  style='font-size:22rpx;'>X </text>{{item.number}}</text>
+              </view>
+           </view>
+           <view class='guige_grp'>
+              <text>{{item.specRemark}}</text>
+           </view>
+           <view class='total_grp'>
+              <text>共计{{item.number}}件商品 合计：</text>
+              <text>¥{{item.price}}</text>
+              <text>(含运费 ¥{{item.yunfei}})</text>
+           </view>
+           <view class='btn_all_grp' wx:if="{{item.status != 1}}" >
+               <text wx:if="{{item.status == 0 || item.status == 3 }}"  bindtap='closeOrder' data-id = "{{item.id}}" data-orderType="{{item.orderType}}" >关闭订单</text>
+               <text  bindtap='finishOrderType' data-goodsId= "{{item.goodsId}}" data-id = "{{item.id}}" data-orderType="{{item.orderType}}"  data-status = "{{item.status}}" data-orderSeq = "{{item.orderSeq}}" >{{ item.status == 0? "支付": item.status == 2? "确认收货": "再次购买" }}</text>
+           </view>
+       </view>
+       <view wx:if = "{{item.orderType == 2}}" class='order_one_grp'>
+           <view class='order_type'>
+              <text></text>
+              <text>{{item.orderTypeName}}</text>
+           </view>
+           <view class='id_state_grp'>
+              <text><text>订单编号：</text><text>{{item.orderSeq}}</text></text> 
+              <text></text>
+           </view>
+          <view class='zj_order_main_grp'>
+              <image src="{{item.thumbnailImg}}" />
+              <view class='order_mes_grp'>
+                  <text>测试名称：{{item.name}}</text>
+                  <text>测试时间：{{item.orderTime || "无"}}</text>
+              </view>
+            </view>
+       </view>
+       <view wx:if = "{{item.orderType == 3}}" class='order_one_grp'>
+       
+          <view class='order_type'>
+            <text></text>
+            <text>{{item.orderTypeName}}</text>
+          </view>
+     
+          <view class='id_state_grp'>
+            <text><text>订单编号：</text><text>{{item.orderSeq}}</text></text> 
+            <text></text>
+          </view>
+          <view class='zj_order_main_grp'>
+            <image src="{{item.thumbnailImg}}" />
+            <view class='order_mes_grp'>
+                <text>专家：{{item.name}}</text>
+                <text>预约时间：{{item.orderTime}}</text>
+                <text>预约方式：{{item.description}}</text>
+            </view>
+          </view>
+      </view>
+      <view class='huise_bg' style='margin-top: 0'></view>
+    </view>
+     <view class='nothing_more'>
+       <text wx:if="{{noData}}">──────没有更多了─────</text>
+    </view>
+</view>

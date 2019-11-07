@@ -1,0 +1,108 @@
+/* pages/zjfa/zjpsj/index.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.tip {
+  height: 70rpx;
+  margin: 0 30rpx;
+  padding-left: 30rpx;
+  display: flex;
+  align-items: center;
+  background-color: #eaeaea;
+  font-size: 28rpx;
+  color: #999;
+}
+.choose_time {
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx 30rpx 30rpx 30rpx;
+}
+
+.choose_time .time_title{
+  font-size: 34rpx;
+  color: #000;
+  margin-bottom: 20rpx;
+}
+.time_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+.time_item {
+  width: 96rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.week_date_all {
+  height: 96rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  color: #666;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 36rpx;
+  width: 100%
+}
+.choosed {
+  border-bottom: solid 2rpx #f8374a;
+  color: #f8374a
+}
+.week_date_all text:first-child {
+   margin-bottom: 10rpx;
+}
+.hour_all {
+  display: flex;
+  flex-direction: column;
+}
+.hour_all > view {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 46rpx;
+  width: 70rpx;
+  height: 80rpx;
+  border: solid 1rpx #ccc;
+  border-radius: 6rpx;
+  color: #666;
+  font-size: 22rpx;
+  justify-content: center;
+  align-items: center
+}
+.hour_all > view text:nth-child(2) {
+  height: 2rpx;
+  width: 10rpx;
+  margin: 2rpx 0;
+  background: #666
+}
+.hour_all .hour_one {
+  border: solid 2rpx #f8374a;
+  background: #fdd9dd;
+  color: #f8374a
+}
+
+.modal_btn_grp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 50rpx 30rpx
+}
+.modal_btn_grp button {
+  width: 50%;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  border-radius: 0
+}
+.modal_btn_grp button:first-child {
+  background: #eaeaea;
+  color: #666;
+}
+.modal_btn_grp button:last-child {
+  background: #f8374a;
+  color: #fff;
+}

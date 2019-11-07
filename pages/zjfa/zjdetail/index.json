@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "专家详情页",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "tab_qie": "../../../component/tabqie/tabqie"
+  }
+}

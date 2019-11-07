@@ -1,0 +1,168 @@
+<!--商品详情pages/shop/goodsDetail/index.wxml-->
+<import src="../../../utils/wxParse/wxParse.wxml"/> 
+<scroll-view bindscroll="scroll" scroll-top="{{scrollTop}}" scroll-y="true" style="position:absolute; top:0; left:0; right:0; bottom:0;">
+<view class='container'>
+    <!-- 商品 -->
+    <view class='goods_area'>
+       <view class='goods_area_img' >
+           <diy-banner  indicatorDots= "{{indicatorDots}}" dataList="{{bannerData}}"></diy-banner>
+       </view>
+       <view class='goods_value_type_grp'>
+          <view class='goods_value__grp'>
+             <view>{{ originValue? '优惠价':'价格' }}</view>
+             <view>
+                <text>¥</text>
+                <text>{{goodsValue1}}</text>
+             </view>
+             <view wx:if="{{originValue}}">
+                <text>原价</text>
+                <text> ¥{{originValue}}</text>
+             </view>
+             <!-- 分享按钮 -->
+             <view class='share_grp' bindtap='onClickShare'>
+                <text class='iconfont iconshare'></text>
+             </view>
+          </view>
+          <view class='goods_abstract'>
+             <text>{{goodsAbstract}}</text>
+          </view>
+          <view style='margin-top: 0' class='huise_bg'></view>
+          <view class='goods_type__grp'>
+             <view class='goods_type_in'>
+                <view>选择：</view>
+                <view>
+                    <text wx:for="{{chooseGoodsType}}" wx:key="chooseGoodsType">{{item.groupName}}{{(chooseGoodsType.length !== (index+1)? " / " : " ")}}</text>
+                </view>
+             </view>
+             <text catchtap="popToggle">...</text>
+         </view>
+         <view  class='huise_bg'></view>
+       </view>
+    </view>
+    <!--商品、详情、评价 -->
+    <view class='goods_xq_pj_grp'>
+        <view class='goods_tab_grp_in'>
+          <tab_qie iconImageShow= "{{ iconImageShow }}" tabData="{{tabData}}" bind:myEvent= "onMyEvent"></tab_qie>
+        </view>
+        <!-- 商品、详情 -->
+        <view wx:if="{{ tabqieCurrentTab === 0 || tabqieCurrentTab === 1 }}" class='sp_xq_grp'>
+           <text>图文详情</text>
+           <view class='goods_img_font' >
+             <!-- <image mode='widthFix' wx:for="{{twxqDatas}}" wx:key="{{twxqDatas}}" src='{{item.imgUrl}}'></image> -->
+             <view>
+                 <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+             </view>
+           </view>
+        </view>
+        <!-- 评价  -->
+        <view wx:if="{{ tabqieCurrentTab === 2 }}" class='goods_pj_grp'>
+            <text class='goods_pj_title'>商品评价</text>
+            <view class='all_pj'>
+               <view class='all_pj_one' wx:for="{{allPjDatas}}" wx:for-item="pjItemOne" wx:key= "allPjDatas">
+                  <view class='pj_person_mes'>
+                     <image src='{{pjItemOne.headImg}}'></image>
+                     <view>
+                        <text>{{pjItemOne.name}}</text>
+                        <text>{{pjItemOne.date}}</text>
+                     </view>
+                  </view>
+                  <view class='pj_content'>
+                     <view>{{pjItemOne.content}}</view>
+                     <!-- 评价内容是否有图片，发表评价页面在哪 -->
+                     <!-- <view > 
+                        <image src=''></image>
+                     </view> -->
+                  </view>
+               </view>
+            </view>
+        </view>
+        <view style='width: 100%; height: 100rpx'></view>
+    </view>
+    <!-- 购买按钮 -->
+    <view class='shop_btn_grp'>
+      <view>
+         <image src='../../../image/kefu.png'></image>
+         <text>客服</text>
+      </view>
+      <view catchtap="popToggle"><text>加入购物车</text></view>
+      <view catchtap="popToggle"><text>立即购买</text></view>
+    </view>
+    <!-- 点击“选择”、“加入购物车”、“立即购买”的 弹出框 -->
+    <pop_up show= "{{showBottomPopup}}" type= "bottom" bind:close="popToggle" >
+       <view class='goods_choosed_area'>
+          <view class='goods_info_grp'>
+             <view class='goods_info_main'>
+                <image src='{{pop_up_goods_img}}'></image>
+                <view class='goods_v_s'>
+                  <text>¥{{goodsValue1}}</text>
+                  <text>库存：{{stock}}件</text>
+                  <view>
+                    <text>选择：</text> 
+                    <text wx:for="{{chooseGoodsType}}" wx:key="chooseGoodsType">{{item.groupName}}{{(chooseGoodsType.length !== (index+1)? " / " : " ")}}</text>
+                  </view>
+                </view>
+             </view>
+             <text catchtap="popToggle" class='iconfont iconclose'></text>
+          </view>
+          <!-- 选择产品规格 -->
+          <view class='choose_goods_type'>
+              <view class='chooseTypeOne' wx:for="{{goodsMultiSpec.spec_attr}}" wx:key="goods_spec_attr" wx:for-item="attr" wx:for-index="attr_idx">
+                 <view>{{attr.groupName}}</view>
+                 <view class='one_goods_all_type'>
+                    <view wx:for="{{attr.specItem}}" wx:key="spec_items" wx:for-index="item_idx" >
+                      <text wx:if="{{item.checked}}" class='one_type choosed_current' catchtap="onSwitchSpec" data-attr-idx="{{attr_idx}}" data-item-idx="{{item_idx}}">{{item.specValue}}</text>
+                      <text wx:else  catchtap="onSwitchSpec" class='one_type' data-attr-idx="{{attr_idx}}" data-item-idx="{{item_idx}}">{{item.specValue}}</text>
+                    </view>
+                    
+                 </view>
+              </view>
+          </view>
+          <!-- 简单版 -->
+          <!-- <view class='choose_goods_type'>
+              <view class='chooseTypeOne' wx:for="{{goodsMultiSpec}}" wx:key="goods_spec_attr" wx:for-item="attr" wx:for-index="attr_idx">
+                 <view>{{attr.groupName}}</view>
+                 <view class='one_goods_all_type'>
+                    <view wx:for="{{attr.specItem}}" wx:key="spec_items" wx:for-index="item_idx" >
+                      <text wx:if="{{item.checked}}" class='one_type choosed_current' catchtap="onSwitchSpec" data-attr-idx="{{attr_idx}}" data-item-idx="{{item_idx}}">{{item.specValue}}</text>
+                      <text wx:else  catchtap="onSwitchSpec" class='one_type' data-attr-idx="{{attr_idx}}" data-item-idx="{{item_idx}}">{{item.specValue}}</text>
+                    </view>
+                    
+                 </view>
+              </view>
+          </view> -->
+          <!-- 购买数量 -->
+          <view class="buy_number">
+            <view class="buyNumber">
+              <text>购买数量</text>
+            </view>
+            <view class="selectNumber">
+              <button catchtap="onDecGoodsNumber" class="default {{ goods_num > 1 ? '' : ' default-active' }}" type="default">-</button>
+              <input bindinput="onInputGoodsNum" type="number" value="{{ goods_num }}"></input>
+              <button catchtap="onIncGoodsNumber" class="default" type="default">+</button>
+            </view>
+          </view>
+          <!-- 底部操作栏 -->
+          <view class="footer-fixed f-30">
+            <block wx:if="{{stock > 0}}">
+              <view class="order-number" catchtap="onConfirmSubmit" data-type="addCart">加入购物车</view>
+              <view class="order-bt" catchtap="onConfirmSubmit" data-type="buyNow"> 立即购买</view>
+            </block>
+            <view class="default-btn" wx:else>暂无现货</view>
+          </view>
+       </view>
+        
+        
+    </pop_up>
+
+    <!-- 点击分享，弹出框 -->
+    <!-- 分享按钮 -->
+    <share show="{{ share.show }}" actions="{{ share.actions }}" cancelText="{{ share.cancelText }}" cancelWithMask="{{           share.cancelWithMask }}" bind:cancel="onCloseShare" mask-class="tiny" ></share>
+    <!-- 返回顶部 -->
+    <view wx:if="{{floorstatus}}" catchtap="onScrollTop" class="back_top" >
+      <text class="iconfont icontop"></text>
+    </view>
+    <!-- 快捷导航 -->
+    <shortcut ></shortcut>
+</view>
+<get_user show= "{{showBottomPopupUser}}" type= "bottom"  bind:close="popToggleUser" ></get_user>
+</scroll-view>

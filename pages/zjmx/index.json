@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "资金明细",
+  "usingComponents": {
+      "tab_qie": "../../component/tabqie/tabqie"
+  }
+}

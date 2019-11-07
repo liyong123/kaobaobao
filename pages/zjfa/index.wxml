@@ -1,0 +1,156 @@
+<!--专家方案pages/zjfa/index.wxml-->
+<view class='container'>
+  <scroll-view scroll-x="{{scrollX}}" class="scroll_view_all" scroll-with-animation="{{true}}">
+    <block wx:for="{{ tabList }}" wx:key="tablist">
+      <view class="tab_item" data-current="{{ item.value }}" bindtap="swichNav">
+         <view>
+           <text class="{{( valueEqual && (selectedValue == item.value)) ? 'selectedName' : 'selectedName2' }}">{{item.name}}</text>
+           <text class="iconfont {{( valueEqual && (selectedValue == item.value)) ? 'iconup' : 'icondown' }} "></text>    
+         </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class='expert_content_all'>
+     <view class='expert_one' wx:for="{{expertAll}}" wx:key="expertAll">
+       <image  src='{{item.imgUrl}}'/>
+       <view class='expert_mes'>
+          <view class='name_address_grp'>
+             <view>
+                <text>{{item.name}}</text>
+                <text>专家</text>
+             </view>
+             <view>
+                <text class='iconfont iconadress'></text>
+                <text>{{item.address}}</text>
+             </view>
+          </view>
+          <view class='abstract_grp'>{{item.abstract}}</view>
+          <view class='goodField'>
+            <text wx:for="{{item.goodField}}" wx:for-item="item2" wx:key='goodField'>{{item2}}</text>
+          </view>
+          <view class='value_grp'>
+             <text>{{item.value}}/次</text> 
+             <navigator>向她咨询</navigator>
+          </view>
+       </view>
+     </view>
+  </view>
+
+  <view wx:if="{{valueEqual &&  modalShow}}" class='mask_all'>
+     <!-- 选择城市 -->
+     <view wx:if = "{{selectedValue == '1' }}" class='modal_all'>
+        <view class='city_all'>
+           <view class='city_bx'>
+              <text>不限</text>
+           </view>
+           <view class='city_dw'>
+              <view>定位城市</view>
+              <view>
+                <text class='iconfont iconadress'></text>
+                <text>{{city}}</text>
+                <text bindtap='updateCity' class='iconfont iconupdate'></text>
+              </view> 
+           </view>
+           <view class='city_content'>
+              <view>
+                 <text>其他城市</text>
+              </view>
+              <view>
+                 <text bindtap='chooseOtherCity' wx:for="{{cityAll}}" wx:key="cityAll">{{item.name}}</text>
+              </view>
+           </view>
+        </view>
+        <view class='modal_btn_grp'>
+          <button><text>重置</text></button>
+          <button><text>确定</text></button>
+        </view>
+     </view>
+
+     <!-- 选择价格 -->
+     <view wx:if = "{{selectedValue == '2' }}" class='modal_all'>
+        <view class='city_all'>
+           <view class='city_bx'>
+              <text>不限</text>
+           </view>
+           <view class='jgfw_grp'>
+              <view>价格范围</view>
+              <view>
+                <slider bindchange="sliderChange" backgroundColor="#ddd" block-color="#f83649" activeColor="#f83649" block-size="12" min="0" max="1000" show-value/>
+              </view>
+              <view>
+                 <text>¥0</text>
+                 <text>¥500</text>
+                 <text>¥1000</text>
+              </view> 
+           </view>
+        </view>
+        <view class='modal_btn_grp'>
+           <button><text>重置</text></button>
+           <button><text>确定</text></button>
+        </view>
+     </view>
+     
+     <!-- 选择预约时间 -->
+     <view wx:if = "{{selectedValue == '3' }}" class='modal_all'>
+        <view class='choose_time_all'> 
+           <view class='time_bx'>
+              <text>不限</text>
+           </view>
+           <view class='time_content'>
+              <view class='time_item' wx:for="{{timeAll}}" wx:key="timeAll">
+                 <view class='week_date_all'>
+                   <text>{{ item.weekDay }}</text>
+                   <text>{{ item.date }}</text>
+                 </view>
+                 <view class='hour_all'>
+                   <view wx:for ="{{item.hourAll}}" wx:for-item = "item2" wx:key="hourAll">
+                     <text>{{ item2.startTime }}</text>
+                     <text></text>
+                     <text>{{ item2.endTime }}</text>
+                   </view>
+                 </view>
+              </view>
+           </view>
+        </view>
+        <view class='modal_btn_grp'>
+          <button><text>重置</text></button>
+          <button><text>确定</text></button>
+        </view>
+     </view>
+
+     <!-- 选择咨询师性别 -->
+     <view wx:if = "{{selectedValue == '4' }}" class='modal_all'>
+        <view class='city_all'>
+           <view class='city_content' style='margin-top:0'>
+              <view>
+                 <text>咨询师性别</text>
+              </view>
+              <view>
+                 <text bindtap='chooseSex' wx:for="{{sexAll}}" wx:key="sexAll">{{item.sexType}}</text>
+              </view>
+           </view>
+        </view>
+        <view class='modal_btn_grp'>
+          <button><text>重置</text></button>
+          <button><text>确定</text></button>
+        </view>
+     </view>
+     <!-- 选择咨询方式 -->
+     <view wx:if = "{{selectedValue == '5' }}" class='modal_all'>
+        <view class='city_all'>
+           <view class='city_content' style='margin-top:0'>
+              <view>
+                 <text>咨询方式</text>
+              </view>
+              <view>
+                 <text bindtap='chooseConsultationType' wx:for="{{consultationAll}}" wx:key="consultationAll">{{item.consultationType}}</text>
+              </view>
+           </view>
+        </view>
+        <view class='modal_btn_grp'>
+          <button><text>重置</text></button>
+          <button><text>确定</text></button>
+        </view>
+     </view>
+  </view>
+</view>

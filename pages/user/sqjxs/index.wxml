@@ -1,0 +1,34 @@
+<!--申请经销商pages/user/sqjxs/index.wxml-->
+<import src="../../../utils/wxParse/wxParse.wxml"/> 
+<view class='container' style='position: relative'>
+   <view class='sq_content'>
+      <view class='sq_title'>请填写经销商认证资料</view>
+      <form class='form_content' bindsubmit='formSubmit'>
+        <view class='form_item_grp'>
+          <input type='text' name="userName" placeholder='您的真实姓名' placeholder-style='color: #999' />
+          <input type='text' name="phone" placeholder='您的手机号码' placeholder-style='color: #999' />
+        </view>  
+        <view class='btn_grp'>
+          <button formType="submit">提交资料 等待审核</button>
+        </view>
+      </form>
+      <view class='sq_sm'>
+         <text>提交即表明您已同意</text>
+         <navigator>《考保宝经销商服务协议》</navigator>
+      </view>
+   </view>
+   <view wx:if="{{xieyiShow}}" class='sq_xieyi'>
+       <view class='mask'></view>
+       <view class='xieyi_content'>
+          <view class='content_all'>
+             <text>申请经销商注意事项</text>
+             <view class='content_font'>
+                <template is="wxParse" data="{{wxParseData:contentFont.nodes}}"/>
+             </view>
+          </view>
+          <view class='ty_xieyi'>
+             <button bindtap='agreeXy'>同意协议</button>
+          </view>
+       </view>
+   </view>
+</view>

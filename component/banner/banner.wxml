@@ -1,0 +1,13 @@
+<!-- banner轮播 -->
+<view class="diy-banner">
+  <swiper autoplay="{{ autoplay }}" class="banner-box swiper-box" duration="{{ duration }}" circular="{{ true }}" indicator-dots="{{ indicatorDots }}" interval="{{ interval }}" indicator-color="{{ indicatorColor }}" indicator-active-color="#ff7629"
+    bindchange="_bindChange"  style="height: {{ imgHeights[imgCurrent]  }}rpx">
+    <swiper-item wx:for-item="banner" wx:for="{{dataList}}" wx:key="this">
+      <image mode="aspectFill"  data-url="{{ banner }}" class="slide-image {{ borderRaduis ? 'slide-image2': ''}}" bindload="_imagesHeight" src="{{banner}}" data-id="{{index}}" ></image>
+    </swiper-item>
+  </swiper>
+  <!-- 顶部置灰 -->
+  <!-- <view class="linear"></view>  -->
+  <!-- style="height: {{ imgHeights[imgCurrent] }}rpx" -->
+   <!-- <image mode="widthFix" catchtap="navigationTo" data-url="{{ banner }}" class="slide-image" bindload="_imagesHeight" src="{{banner}}" data-id="{{index}}" ></image> -->
+</view>

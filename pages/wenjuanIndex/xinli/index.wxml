@@ -1,0 +1,107 @@
+<!--心理模板pages/wenjuanIndex/xinli/index.wxml-->
+<view class='container'>
+   <view class='header_pinggu'>
+      <view class='pinggu_title'>
+         <text>●</text>
+         <text>心理状况评估</text>
+      </view>
+      <view class='header_link_grp'>
+         <view class='header_link_one' wx:for="{{headerLinkAll}}" bindtap='toTest' data-testType="{{item.testType}}" data-id= "{{item.id}}" wx:key="header_link_all">
+            <image src='{{item.imgUrl}}' />
+            <navigator url='{{item.linkUrl}}'>
+               <text>{{item.name}}</text>
+               <text>开始评估</text>
+            </navigator>
+         </view>
+      </view>
+   </view>
+   <view class='huise_bg'></view>
+   <!-- 专家咨询 -->
+   <view class='expert_grp'>
+      <view class='title_public'>
+         <view>
+            <text></text>
+            <text>专家咨询</text>
+         </view>
+         <navigator>
+           <text>更多</text>
+           <text class='iconfont iconnext'></text>
+         </navigator>
+      </view>
+      <view class='expert_content_all'>
+        <view class='expert_one' wx:for="{{expertAll}}" wx:key="expertAll">
+          <image  src='{{item.imgUrl}}'/>
+          <view class='expert_mes'>
+              <view class='name_address_grp'>
+                <view>
+                    <text>{{item.name}}</text>
+                    <text>专家</text>
+                </view>
+                <view>
+                    <text class='iconfont iconadress'></text>
+                    <text>{{item.address}}</text>
+                </view>
+              </view>
+              <view class='abstract_grp'>{{item.abstract}}</view>
+              <view class='goodField'>
+                <text wx:for="{{item.goodField}}" wx:for-item="item2" wx:key='goodField'>{{item2}}</text>
+              </view>
+              <view class='value_grp'>
+                <text>{{item.value}}/次</text> 
+                <navigator>向她咨询</navigator>
+              </view>
+          </view>
+        </view>
+      </view>
+   </view>
+   <view class='huise_bg'></view>
+   <!-- 心理产品 -->
+   <view class='goods_grp'>
+      <view class='title_public'>
+         <view>
+            <text></text>
+            <text>心理产品</text>
+         </view>
+         <navigator>
+           <text>更多</text>
+           <text class='iconfont iconnext'></text>
+         </navigator>
+      </view>
+      <view class='solve_main_content'>
+        <view class='fa_one' wx:for="{{solveGoodsData}}" wx:key="solveGoodsData">
+            <image src='{{item.goodsImg}}' />
+            <text class='sell_number'>已售{{item.sellNumber}}件</text>
+            <text class='solve_abstract'>{{item.abstract}}</text>
+            <view class='value_grps'>
+              <view>
+                <text>¥{{item.value}}</text>
+                <text>¥{{item.oldValue}}</text>
+              </view>
+              <navigator url=''>去购买</navigator>
+            </view>
+        </view>
+      </view>
+   </view>
+   <view class='huise_bg'></view>
+   <!-- 其他服务 -->
+
+    <view class='other_service_grp'>
+        <view class='title_public'>
+          <view>
+              <text></text>
+              <text>其他服务</text>
+          </view>
+        </view>
+        <view class='other_content'>
+            <view class='other_one' wx:for="{{otherDatas}}" wx:key="otherDatas">
+              <image src='{{item.imgUrl}}' />
+              <view>
+                  <text>{{item.title}}</text>
+                  <text>{{item.abstract}}</text>
+              </view>
+            </view>
+        </view>
+    </view>
+
+
+</view>

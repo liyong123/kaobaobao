@@ -1,0 +1,20 @@
+<!--component/getUser.wxml-->
+ <!--弹出组件l-->
+<view class="pop pop--{{type}} {{show? 'pop--show': ''}}">
+   <view wx:if= "{{maskLayoutShow}}" class="pop__mask" bindtap='handleMaskClick'></view>
+      <view class='pop_content'>
+         <view class='content_top'>
+             <image src="http://kaobaobaotest.oss-cn-qingdao.aliyuncs.com/f4d7ffba4e27414ab197f08373146a16.jpg?Expires=1886918215&OSSAccessKeyId=LTAIbgEq2YbBUscL&Signature=LorPC9oNngzTXnfU%2FkH2hgn%2BHTI%3D" />
+             <text>欢迎来到考宝宝</text>
+             <text class='iconfont iconclose' bindtap='handleMaskClick'></text>
+         </view>  
+         <view class='content_main'>
+            <text>为提供更优质的服务，考宝宝需要获取以下信息：</text>
+            <text>· 您的公开信息（您的昵称、头像等）</text>
+         </view>
+         <view style='padding: 40rpx 30rpx 50rpx 30rpx'>
+           <button class="login-btn"  wx:if="{{canIUse}}" openType="getUserInfo" lang="zh_CN" bindgetuserinfo="authorLogin">授权登录</button>
+         </view>
+          
+      </view>
+</view>

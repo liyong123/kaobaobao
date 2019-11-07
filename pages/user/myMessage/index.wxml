@@ -1,0 +1,16 @@
+<!--我的消息pages/user/myMessage/index.wxml-->
+<view class='user_my_mes_grp'>
+    <navigator url='{{item.linkUrl}}' class='user_my_mes_one' wx:for="{{mesDatas}}" wx:key="mesDatas">
+       <view class='expert_mes'>
+           <image src='{{item.userImgUrl}}'></image>
+           <view>
+              <text>{{item.userName}}</text>
+              <text>{{item.mesContent}}</text>
+           </view>
+       </view>
+       <view class='date_tip_grp'>
+          <text>{{item.date}}</text>
+          <text>{{item.mesNum}}</text>
+       </view>
+    </navigator>
+</view>

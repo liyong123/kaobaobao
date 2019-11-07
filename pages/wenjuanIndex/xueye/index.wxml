@@ -1,0 +1,40 @@
+<!--学业版块pages/wenjuanIndex/xueye/index.wxml-->
+<view class='container'>
+   <view class='header_pinggu'>
+      <view class='pinggu_title'>
+         <text>●</text>
+         <text>学业测试</text>
+      </view>
+      <view class='header_link_grp'>
+         <view class='header_link_one' wx:for="{{headerLinkAll}}" bindtap='toTest' data-testType="{{item.testType}}" data-id= "{{item.id}}" wx:key="header_link_all">
+            <image src='{{item.imgUrl}}' />
+            <navigator url='{{item.linkUrl}}'>
+               <text>{{item.name}}</text>
+               <text>开始评估</text>
+            </navigator>
+         </view>
+      </view>
+   </view>
+   <view class='huise_bg'></view>
+   <!-- 其他服务 -->
+
+    <view class='other_service_grp'>
+        <view class='title_public'>
+          <view>
+              <text></text>
+              <text>其他服务</text>
+          </view>
+        </view>
+        <view class='other_content'>
+            <view class='other_one' wx:for="{{otherDatas}}" wx:key="otherDatas">
+              <image src='{{item.imgUrl}}' />
+              <view>
+                  <text>{{item.title}}</text>
+                  <text>{{item.abstract}}</text>
+              </view>
+            </view>
+        </view>
+    </view>
+
+
+</view>

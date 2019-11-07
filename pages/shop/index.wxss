@@ -1,0 +1,113 @@
+/* pages/shop/index.wxss */
+.tab_grp {
+  position: fixed;
+  height: 70rpx;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.tab_grp .tab_grp_in {
+  position: relative
+}
+.shop_goods_grp {
+  margin-top: 70rpx;
+  padding: 24rpx 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.shop_goods_one {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 28rpx;
+  width: 330rpx;
+  margin-bottom: 30rpx;
+  border-bottom-left-radius: 12rpx;
+  border-bottom-right-radius: 12rpx;
+  box-shadow:0px 2px 12px 2px rgba(250,52,69,0.12);
+}
+.shop_goods_one image {
+  width: 330rpx;
+  height: 320rpx;
+  border-top-left-radius: 12rpx;
+  border-top-right-radius: 12rpx;
+  margin-bottom: 20rpx;
+}
+.goods_abstract {
+  font-size: 20rpx;
+  color: #181818;
+  line-height: 40rpx;
+  padding: 0 15rpx;
+  margin-bottom: 20rpx;
+}
+.goods_value_grp {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.goods_value_grp > text {
+  flex: none;
+  color: #f93450;
+  font-size: 30rpx;
+  margin-left: 15rpx;
+}
+.goods_value_grp >view {
+  flex: none;
+  width: 128rpx;
+  height: 36rpx;
+  border: solid 2rpx #f93450;
+  border-radius: 20rpx;
+  color: #f93450;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15rpx;
+}
+.scroll_all {
+  position: fixed;
+  height: 70rpx;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
+.scroll_view_all {
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: solid 2rpx #f1f1f1;
+}
+.scroll_view_all view.tab_item{
+  display: inline-block;
+  margin-right: 20rpx;
+  color: #181818;
+  font-size: 28rpx;
+  height: 70rpx;
+  text-align: center;
+}
+.scroll_view_all view.choosedTab{
+  color:#fb354c;
+}
+.scroll_view_all view.tab_item view {
+  display:flex;
+  flex-direction:column;
+}
+.scroll_view_all view.tab_item view text:first-child {
+   height: 68rpx;
+   line-height: 68rpx;
+   padding: 0 30rpx;
+}
+
+.scroll_view_all view.tab_item view text.bottomLine{
+   background:  #fb354c;
+   width: 100%;
+   height: 4rpx;
+}

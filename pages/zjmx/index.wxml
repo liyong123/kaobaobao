@@ -1,0 +1,78 @@
+<!--资金明细pages/zjmx/index.wxml-->
+<view class='container'>
+   <view class='header_grp'>
+      <text>积分</text>
+      <text>{{jifen}}</text>
+   </view>
+   <view class='mx_content'>
+      <!-- 时间段 -->
+      <view class="picker_group">
+        <text class='iconfont icondate'></text>
+        <picker mode="date" value="{{date}}" start="{{date}}" end="{{date2}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+        <text style='color:#999;font-size: 26rpx;'>至</text>
+        <picker mode="date" value="{{date2}}" start="{{date}}"  bindchange="bindDateChange2">
+          <view class="picker">
+            {{date2}}
+          </view>
+        </picker>      
+      </view>
+      <view class='line'></view>
+      <!-- 明细 -->
+      <view class='mx_mainContent'>
+        <view class='mx_tab_grp'>
+          <tab_qie  tabData="{{tabData}}" bind:myEvent= "onMyEvent"></tab_qie>
+        </view>
+        <!-- 销售明细 -->
+        <view wx:if="{{ tabqieCurrentTab == 0 }}" class='item_all_grp'>
+          <view class='item_one' wx:for="{{itemDatas}}" wx:key="{{item_datas}}">
+            <view class='one_left'>
+              <text class='iconfont iconmoney2'></text>
+              <view>
+                <text>{{item.userName}}</text>
+                <text>{{item.date}}</text>
+              </view>
+            </view>
+            <view class='one_right'>
+              <view>
+                <text></text>
+                <text>{{item.money}}</text>
+                <text>元</text>
+              </view>
+              <text>{{item.jifen}}</text>
+            </view>
+          </view>
+          <navigator style='margin-top: 30rpx' class='nothing_more'>点击查看更多</navigator>
+        </view>
+         <!-- 下级销售额 -->
+        <view wx:if="{{ tabqieCurrentTab == 1 }}" class='item_all_grp' style='padding: 0'>
+            <view class='xs_tc_grp'>
+              <view class='xj_item_one'>
+                <view>
+                  <text>销售额</text>
+                  <text class='iconfont iconmoney3'></text>
+                </view>
+                <text>99.99</text>
+              </view>
+              <view class='xj_item_one'>
+                <view>
+                  <text>提成金额</text>
+                  <text class='iconfont iconmoney3'></text>
+                </view>
+                <text>999.99</text>
+              </view>
+            </view>
+        </view>
+        <view class='huise_bg' style='margin-top:0'></view>
+        <view class='xj_link_grp'>
+            <view wx:for="{{xjLinkData}}" wx:key="xjLinkData">
+                <text>{{item.name}}</text>
+                <navigator url='{{item.linkUrl}}'><text class='iconfont iconnext'></text></navigator>
+            </view>
+        </view>
+      </view>
+   </view>
+</view>

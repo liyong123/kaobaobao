@@ -1,0 +1,23 @@
+<!--销售明细pages/user/xsmx/index.wxml-->
+<view class='container'>
+   <view class='item_all_grp'>
+      <view class='item_one' wx:for="{{itemDatas}}" wx:key="{{item_datas}}">
+        <view class='one_left'>
+          <text class='iconfont iconmoneynew'></text>
+          <view>
+             <text>{{item.userName}}</text>
+             <text>{{item.date}}</text>
+          </view>
+        </view>
+        <view class='one_right'>
+           <text>+</text>
+           <text>{{item.money}}</text>
+           <text>元</text>
+        </view>
+      </view>
+      <navigator style='margin-top: 30rpx' class='nothing_more'>点击查看更多</navigator>
+   </view>
+
+  
+</view>
+

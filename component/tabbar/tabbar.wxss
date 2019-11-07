@@ -1,0 +1,27 @@
+/* component/tabbar/tabbar.wxss */
+.tabbar-bottom {
+  position: fixed;
+  height: 100rpx;
+  padding: 0 35rpx;
+  box-sizing: border-box;
+  width: 100%;
+  border-top: 1px solid rgba(200,200,200,0.6);
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  z-index: 10000000;
+}
+
+.tabbar-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 auto;
+}
+
+.tabbar-nav {
+  width: 100rpx;
+  text-align: center;
+  padding: 14rpx 10rpx 10rpx 10rpx ;
+  line-height: 1;
+}

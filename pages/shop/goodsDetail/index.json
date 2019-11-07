@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "diy-banner": "../../../component/banner/banner",
+    "tab_qie": "../../../component/tabqie/tabqie",
+    "pop_up": "../../../component/popup/popup",
+    "share": "../../../component/share/share",
+    "shortcut": "../../../component/shortcut/shortcut",
+    "get_user": "../../../component/getUser/getUser"
+  }
+}

@@ -1,0 +1,15 @@
+<!-- 资讯垂直滚动 -->
+  <view class='burberry-glasses'>
+    <text class='burberry-black'>最新</text>
+    <text class='burberry-red'>标讯</text>
+    <swiper class="burberry-glasses-content" vertical="true" autoplay="true" circular="true" interval="2000">
+      <block wx:for="{{msgList}}" wx:key="msgList">
+        <navigator url="/pages/web/commitDetail?ggId={{item.flag == 0 ? item.oid : item.id}}" open-type="navigate">
+        <swiper-item>
+          <text class='burberry-glasses-name'>{{item.orderName}}</text>
+          <text class='burberry-glasses-status'>签约成功！</text>
+        </swiper-item>
+        </navigator>
+      </block>
+    </swiper>
+  </view>

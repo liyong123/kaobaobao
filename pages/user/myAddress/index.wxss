@@ -1,0 +1,90 @@
+/* pages/user/myAddress/index.wxss */
+page {
+  background: #f5f5f5;
+}
+.address_all {
+  display: flex;
+  flex-direction: column;
+  border-top: solid 1rpx #aaa;
+}
+.address_one {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20rpx;
+  padding: 20rpx 30rpx;
+  background: #fff;
+}
+.address_name_grp {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20rpx;
+  border-bottom: solid 1rpx #eee;
+}
+.name_tele_grp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+.name_tele_grp > view >text:first-child {
+  margin-right: 30rpx;
+}
+.name_tele_grp > text {
+  flex: none;
+  font-size: 20rpx;
+  padding: 2rpx 8rpx;
+  border-radius: 4rpx;
+  background: #fa364c;
+  color: #fff
+}
+.address_name_grp .address_in {
+  display: flex;
+  justify-content: flex-start;
+  color: #666;
+  font-size: 26rpx;
+}
+.add_address {
+  display: flex;
+  justify-content: center;
+  margin: 0 30rpx;
+  background-color: #fa364c;
+  font-size: 34rpx;
+  align-items: center;
+  color: #fff;
+  height: 95rpx;
+  margin-top: 300rpx;
+}
+.container .navigator-hover {
+   background-color: #fa364c;
+}
+.address_moren_grp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.radio_only {
+  width: 30%;
+}
+.action_grp {
+  display: flex;
+  flex-direction: row;
+  color:#666;
+  font-size: 24rpx;
+}
+.action_grp >navigator {
+  margin-right: 60rpx;
+}
+.action_grp > .action_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center
+}
+.action_grp > .action_btn .iconfont {
+  font-size: 26rpx;
+  margin-right: 10rpx
+}

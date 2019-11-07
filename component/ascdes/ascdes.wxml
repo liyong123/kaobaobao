@@ -1,0 +1,21 @@
+<!-- 升序降序组件 -->
+<view class='filter-list-header' style='margin-bottom:20rpx;'>
+    <view class="list-header-item {{listSort['registeredAssets']['type']}}" data-sort-type='registeredAssets' bindtap="sortRegisteredAssets">
+      <text class="{{sortStatusList.registeredAssets ? 'choosed': ''}}">注册资本</text>
+      <image wx:if="{{listSort.registeredAssets.type === 'icon'}}" src='../../image/sort_icon.png'></image>
+      <image wx:if="{{listSort.registeredAssets.type === 'desc'}}" src='../../image/icon_desc.png'></image>
+      <image wx:if="{{listSort.registeredAssets.type === 'asc'}}" src='../../image/icon_asc.png'></image>
+    </view>
+    <view class="list-header-item {{listSort['staffSize']['type']}}" data-sort-type='staffSize' bindtap="sortRegisteredAssets">
+      <text class="{{sortStatusList.staffSize ? 'choosed': ''}}">人员规模</text>
+      <image wx:if="{{listSort.staffSize.type === 'icon'}}" src='../../image/sort_icon.png'></image>
+      <image wx:if="{{listSort.staffSize.type === 'desc'}}" src='../../image/icon_desc.png'></image>
+      <image wx:if="{{listSort.staffSize.type === 'asc'}}" src='../../image/icon_asc.png'></image>
+    </view>
+    <view class="list-header-item {{listSort['annualSales']['type']}}" data-sort-type='annualSales' bindtap="sortRegisteredAssets">
+      <text class="{{sortStatusList.annualSales ? 'choosed': ''}}">注册时间</text>
+      <image wx:if="{{listSort.annualSales.type === 'icon'}}" src='../../image/sort_icon.png'></image>
+      <image wx:if="{{listSort.annualSales.type === 'desc'}}" src='../../image/icon_desc.png'></image>
+      <image wx:if="{{listSort.annualSales.type === 'asc'}}" src='../../image/icon_asc.png'></image>
+    </view>
+</view>

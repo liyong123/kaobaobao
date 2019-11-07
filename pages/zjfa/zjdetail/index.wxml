@@ -1,0 +1,95 @@
+<!--专家详情页pages/zjfa/zjdetail/index.wxml-->
+<view class='container'>
+  <view class="header_grp">
+     <image  src="{{headerImg}}" mode="widthFix" />
+     <view class='zj_name'>{{zjName}}</view>
+     <view class='zj_address'>
+        <text class='iconfont iconadress'></text>
+        <text>{{zjAddress}}</text>
+     </view>
+     <view class='service_grp'>
+        <view>
+           <text>{{zjValue}}/次</text>
+           <text>咨询费用</text>
+        </view>
+        <view>
+           <text>{{serviceNum}}+</text>
+           <text>服务人数</text>
+        </view>
+        <view>
+           <text>{{score}}</text>
+           <text>服务分数</text>
+        </view>
+     </view>
+  </view>
+  <view class='huise_bg'></view>
+  <view class='zxfs_grp'>
+     <view>咨询方式</view>
+     <view>
+        <text wx:for="{{zxfsAll}}" wx:key="zxfsAll">{{item.type}}</text>
+     </view>
+  </view>
+  <view class='choose_time'>
+      <view class='time_title'>选择预约时间</view>
+      <view class='time_content'>
+        <view class='time_item' wx:for="{{timeAll}}" wx:key="timeAll">
+            <view class='week_date_all'>
+              <text>{{ item.weekDay }}</text>
+              <text>{{ item.date }}</text>
+            </view>
+            <view class='hour_all'>
+              <view wx:for ="{{item.hourAll}}" wx:for-item = "item2" wx:key="hourAll">
+                <text>{{ item2.startTime }}</text>
+                <text></text>
+                <text>{{ item2.endTime }}</text>
+              </view>
+            </view>
+        </view>
+      </view>
+  </view>
+
+   <!--简介、评价 -->
+    <view class='goods_xq_pj_grp'>
+        <view class='goods_tab_grp_in'>
+          <tab_qie iconImageShow= "{{ iconImageShow }}" tabData="{{tabData}}" bind:myEvent= "onMyEvent"></tab_qie>
+        </view>
+        <!-- 简介  -->
+        <view wx:if="{{ tabqieCurrentTab === 0  }}" class='sp_xq_grp'>
+           <text>专家简介</text>
+           <view class='goods_img_font' >
+               简介
+           </view>
+        </view>
+        <!-- 评价  -->
+        <view wx:if="{{ tabqieCurrentTab === 1 }}" class='goods_pj_grp'>
+            <text class='goods_pj_title'>专家评价</text>
+            <view class='all_pj'>
+               <view class='all_pj_one' wx:for="{{allPjDatas}}" wx:for-item="pjItemOne" wx:key= "allPjDatas">
+                  <view class='pj_person_mes'>
+                     <image src='{{pjItemOne.headerImg}}'></image>
+                     <view>
+                        <text>{{pjItemOne.name}}</text>
+                        <text>{{pjItemOne.date}}</text>
+                     </view>
+                  </view>
+                  <view class='pj_content'>
+                     <view>{{pjItemOne.pjFontContent}}</view>
+                     <!-- 评价内容是否有图片，发表评价页面在哪 -->
+                     <!-- <view > 
+                        <image src=''></image>
+                     </view> -->
+                  </view>
+               </view>
+            </view>
+        </view>
+        <view style='width: 100%; height: 100rpx'></view>
+    </view>
+    <!-- 购买按钮 -->
+    <view class='shop_btn_grp'>
+      <view>
+         <image src='../../../image/kefu.png'></image>
+         <text>客服</text>
+      </view>
+      <view><text>立即预约</text></view>
+    </view>
+</view>

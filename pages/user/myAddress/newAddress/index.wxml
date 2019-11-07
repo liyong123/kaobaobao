@@ -1,0 +1,36 @@
+<!--pages/user/myAddress/newAddress/index.wxml-->
+<view class='container'>
+  <form bindsubmit='formSubmit'>
+    <view class='person_mes_grp'>
+      <view class='person_mes_one'>
+         <label>收货人</label>
+         <input type='text' name="personName" value='{{personName}}' placeholder='请输入您的姓名' placeholder-style='color: #999' />
+      </view>
+      <view class='person_mes_one'>
+         <label>手机号</label>
+         <input type='text' name="phone" value='{{phone}}' placeholder='请输入您的手机号' placeholder-style='color: #999' />
+      </view>
+      <view class='person_mes_one'>
+         <label>收货地址</label>
+          <picker class='picker_grp' mode="region" bindchange="bindRegionChange"  value="{{region}}">
+              <!-- <text>请选择收货地址</text>
+              <text class='iconfont iconnext'></text> -->
+              {{region[0]}}，{{region[1]}}，{{region[2]}}
+          </picker>
+      </view>
+      <view class='person_mes_one'>
+         <label>详细地址</label>
+         <input type='text' name="address" value='{{address}}' placeholder='输入街道门牌号（最多50字）' placeholder-style='color: #999' />
+      </view>
+      <view class='person_mes_one person_mes_one2'>
+         <label>设为默认地址</label>
+         <switch name="morenAddress" checked='{{morenFalse}}' color="#fa364c"/>
+      </view>
+    </view>
+    <view class='form_btn_grp'>
+      <button wx:if="{{!goods_to_address}}" formType="submit">保存</button>
+      <button wx:else formType="submit">保存</button>
+    </view>
+  </form>
+   
+</view>

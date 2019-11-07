@@ -1,0 +1,61 @@
+<!--首页index.wxml-->
+<view class="container" >
+   <view class='header_bg'>
+   </view>
+    <!-- 轮播 -->
+   <view class='home_banner' style="margin-top: -440rpx;padding: 0 30rpx;">
+       <diy-banner class="banner_grp" borderRaduis="{{borderRaduis}}" indicatorDots="{{indicatorDots}}"  dataList="{{bannerData}}"></diy-banner>
+   </view>
+   <view class='scroll_all'>
+       <scroll-view scroll-x="{{scrollX}}" class="scroll_view_all" scroll-with-animation="{{true}}">
+          <block wx:for="{{ scrollList }}" wx:key="scrollList">
+            <view class="tab_item" data-type = '{{item.type}}' bindtap = "toCeshiModuleHome" >
+              <view>
+                <image src='{{item.imgUrl}}' />
+                <text>{{item.name}}</text>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+   </view>
+   <view class='other_grp'>
+  
+     <!-- 各个代表模块 -->
+     <view class='daibiao_module_grp'>
+        <view class='daibiao_one' wx:for="{{daibiaoModuleData}}" wx:key="daibiaoModule">
+          <image mode="widthFix" src='{{item.imgUrl}}' catchtap="navigationTo" data-url="{{ item.linkUrl }}"></image>
+          <text>{{item.name}}</text>
+        </view>
+     </view>
+     <view class='huise_bg'></view>
+     <!-- 专家专栏 -->
+     <view class='zhuanjia_module_grp'>
+        <view class='module_title_pub'>
+          <text>专家专栏</text>
+          <navigator url='/pages/index/newsMore/index' >更多 >></navigator>
+        </view>
+        <view class='zhuanjia_area'>
+         
+            <navigator url='/pages/index/newsMore/newsDetail/index?id={{item.id}}'    class='zhuanjia_one' wx:for="{{expertDatas}}" wx:key="zhuanjia_one">
+            
+               <image src='{{item.headImg}}'></image>
+               <view class='zhuanjia_one_font' style='width:{{zhuajiaMessageWidth}}'>
+                   <view class='zhuanjia_one_title'>{{item.title}}</view>
+                   <view class='zhuanjia_one_abstract'>{{item.description}}</view>
+                   <view class='zhuanjia_one_date_grp'>
+                     <text>{{item.createDate}}</text>
+                     <text>来源：{{item.origin}}</text>
+                   </view>
+               </view>
+           
+            </navigator>
+          
+        </view>
+        <navigator url='/pages/index/newsMore/index' class='toMore' style='margin-bottom: 120rpx'>
+           点击查看更多>>
+        </navigator>
+     </view>
+   </view>
+</view>
+
+<tab-bar pagesMenu = '{{pagesMenu}}'></tab-bar> 

@@ -1,0 +1,44 @@
+<!--家长保障测试结果pages/wenjuanresult/jzbzcs/index.wxml-->
+<view class='container'>
+   <view class='header_bg'>
+   </view>
+   <view class='result_grp'>
+      <view class='cs_result'>测试结果</view>
+      <view class='cs_score'>
+         <image mode='widthFix' src='{{ceResultBg}}' />
+         <view class='score_grp'>
+            <text>{{score}}</text>
+            <text>分</text>
+         </view>
+      </view>
+      <view class='ce_result_font'>{{ceResultFont}}</view> 
+      <view class='solve_grp'>
+         <text>自主解决方案</text>
+         <view>{{zzjjfa}}</view>
+      </view>
+   </view>
+  <view class='other_service_grp'>
+     <view class='other_title'>
+        <text></text>
+        <text>其他服务</text>
+     </view>
+     <view class='other_content'>
+        <view class='other_one' wx:for="{{otherDatas}}" wx:key="otherDatas">
+           <image src='{{item.imgUrl}}' />
+           <view>
+              <text>{{item.title}}</text>
+              <text>{{item.abstract}}</text>
+           </view>
+        </view>
+     </view>
+     <view class='other_content other_content2'>
+        <view class='other_one' wx:for="{{otherDatas2}}" wx:key="otherDatas2">
+           <image src='{{item.imgUrl}}' />
+           <view>
+              <text>{{item.title}}</text>
+              <text>{{item.abstract}}</text>
+           </view>
+        </view>
+     </view>
+  </view>
+</view>

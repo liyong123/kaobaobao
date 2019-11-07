@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "专家首页",
+  "usingComponents": {
+     "tab-bar": "../../../component/tabbar/tabbar"
+  }
+}

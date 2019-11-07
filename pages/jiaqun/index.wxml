@@ -1,0 +1,16 @@
+<!--加群pages/jiaqun/index.wxml-->
+<view class="container">
+   <view class='qun_one qun_only{{index}}' wx:for="{{qunDatas}}" wx:key="qunDatas">
+      <view class='erwei_grp'>
+         <image mode='widthFix' src='{{item.erweiUrl}}'/>
+         <text>长按识别二维码进群</text>
+      </view>
+      <view class='qun_content'>
+         <text>{{item.qunName}}</text>
+         <text>{{item.abstract}}</text>
+         <text class='shibie{{index}}'>识别进群</text>
+      </view>
+   </view>
+</view>
+
+<tab-bar pagesMenu = '{{pagesMenu}}'></tab-bar> 

@@ -1,0 +1,8 @@
+<!--弹出组件，点击购物的弹出组件component/popup.wxml-->
+<view class="pop pop--{{type}} {{show? 'pop--show': ''}}">
+   <view wx:if= "{{maskLayoutShow}}" class="pop__mask" bindtap='handleMaskClick'></view>
+   <view class="pop__container">
+      <slot></slot>
+   </view>
+</view>
+
