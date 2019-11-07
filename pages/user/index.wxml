@@ -5,7 +5,7 @@
    <view class='header_message_grp'>
       <view class='header_img_grp'>
          <view>
-            <image src="{{ headImg }}" />
+            <image src="{{ headImgs }}" />
          </view>
          <view class='header_user_ID'>
            <!-- 判断角色 -->

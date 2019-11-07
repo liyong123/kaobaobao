@@ -25,7 +25,7 @@ Page({
     tipNum:'0',
     showBottomPopup: false,
     userType: 1,
-    headImg: "",
+    headImgs: "",
     applyAgentStatus: -1,
     applyExpertStatus: -1,
   
@@ -48,7 +48,7 @@ Page({
           })
          if(datas){
            _this.setData({
-             headImg: datas.headImg,
+             headImgs: datas.headImg,
              applyAgentStatus: datas.applyAgentStatus,
              applyExpertStatus: datas.applyExpertStatus,
              serviceNumber: datas.serviceNumber,
