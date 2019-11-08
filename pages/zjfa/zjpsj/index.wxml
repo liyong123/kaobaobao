@@ -3,18 +3,19 @@
    <view class='tip'><text>根据个人时间安排，如需调整请提前一天</text></view>
    <view class='choose_time'>
       <view class='time_content'>
-        <view class='time_item' wx:for="{{timeAll}}" wx:for-index= "index" data-index= "index"  wx:key="timeAll">
-            <view class="week_date_all  {{choosedDay == index? 'choosed': ''}}">
+        <view class='time_item' >
+            <view class="week_date_all  {{choosedDay == index? 'choosed': ''}}" bindtap='choosedDate' wx:for="{{weekAll}}"  data-index= "{{index}}"  wx:key="weekAll">
               <text>{{ item.weekDay }}</text>
               <text>{{ item.date }}</text>
             </view>
-            <view class='hour_all'>
-              <view  data-index2= "item2Index" wx:for ="{{item.hourAll}}" wx:for-item = "item2" wx:for-index="item2Index" wx:key="hourAll">
-                <text>{{ item2.startTime }}</text>
-                <text></text>
-                <text>{{ item2.endTime }}</text>
-              </view>
-            </view>
+           
+        </view>
+        <view class='hour_all'>
+          <view   wx:for ="{{hourAll}}"  wx:key="hourAll">
+            <text>{{ item.startTime }}</text>
+            <text></text>
+            <text>{{ item.endTime }}</text>
+          </view>
         </view>
       </view>
   </view>
