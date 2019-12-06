@@ -1,0 +1,28 @@
+<!--商品评价pages/shop/evaluate/index.wxml-->
+<view class='container'>
+<view class='item-one' style='margin-top:30rpx;'>
+  <view class="star-title">态度：</view>
+  <view class="star-pos">
+    <text class="stars iconfont iconstar" wx:key="{{item}}+0" style = "color: {{flag[0]>=item? '#fcaa34': '#bbb'}}" bindtap="changeColor" data-index='0' data-no="{{item}}" wx:for="{{stardata}}"
+          ></text>
+    <view style='margin-left: 30rpx;'>{{startext[0]}}</view>
+  </view>
+</view>
+<view class='item-one' >
+  <view class="star-title">能力：</view>
+  <view class="star-pos">
+    <text class="stars iconfont iconstar" wx:key="{{item}}+1"  style = "color: {{flag[1]>=item? '#fcaa34': '#bbb'}}" bindtap="changeColor" data-index='1' data-no="{{item}}" wx:for="{{stardata}}"
+          ></text>
+    <view style='margin-left: 30rpx;'>{{startext[1]}}</view>
+  </view>
+</view>
+
+<!-- 文本框 -->
+<view class="text-section">
+  <form bindsubmit="bindFormSubmit">
+    <textarea placeholder="说点什么吧" name="textarea"/>
+    <button form-type="submit"> <text>提交</text>  </button>
+  </form>
+</view>
+ 
+</view>

@@ -9,6 +9,7 @@
     "pages/shop/goodsDetail/index",
     "pages/shop/confirmOrders/index",
     "pages/shop/shopCar/index",
+    "pages/shop/evaluate/index",
     "pages/user/index",
     "pages/user/myState/index",
     "pages/user/myMessage/index",

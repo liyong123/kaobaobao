@@ -1,0 +1,55 @@
+/* pages/shop/evaluate/index.wxss */
+.container {
+  border-top: solid 1rpx #ebebeb
+}
+.item-one {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 20rpx 30rpx 0 30rpx;
+  margin-bottom: 10rpx;
+}
+.star-title {
+  font-size: 30rpx;
+  color: #181818
+}
+.star-pos {
+  margin-left: 0rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.star-pos view {
+  font-size: 24rpx;
+  color: #666;
+}
+.stars{
+  font-size: 38rpx;
+  margin-left: 30rpx;
+}
+.text-section  {
+  margin-top: 20rpx;
+  padding: 30rpx 10rpx;
+  border-top: solid 0rpx #ebebeb
+}
+.text-section textarea {
+  border: solid 1rpx #ebebeb;
+  padding: 10rpx 18rpx;
+  color: #666;
+  font-size: 28rpx;
+  width: auto !important;
+}
+.text-section button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #f8374a;
+  font-size: 30rpx;
+  color: #fff;
+  border-radius: 0;
+  height: 78rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
